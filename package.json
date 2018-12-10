@@ -33,7 +33,8 @@
   },
   "scripts": {
     "watch": "webpack --watch-stdin --progress --color",
-    "webpack": "webpack -p"
+    "webpack": "webpack -p",
+    "ci:test": "./bin/ci"
   },
   "dependencies": {}
 }
