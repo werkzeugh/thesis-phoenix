@@ -4,7 +4,7 @@ defaults: &defaults
     - image: circleci/elixir:1.4
       environment:
         MIX_ENV: test
-    - image: postgres:10-alpine-postgis
+    - image: circleci/postgres:10-alpine-postgis
       environment:
         POSTGRES_USER: root
         POSTGRES_HOST: localhost
