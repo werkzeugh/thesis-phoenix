@@ -39,19 +39,24 @@ jobs:
           name: Install mix dependencies
           command: mix deps.get
       - run:
-          name: Create database
-          command: mix ecto.create
-      - run:
           name: Install node dependencies
-          command: yarn install
+          command: npm install
       - run:
-          name: Install example app 1 node dependencies
+          name: Install example app v2 node dependencies
           working_directory: examples/example-phx-1_2
-          command: yarn install
+          command: npm install
       - run:
-          name: Install example app 1 node dependencies
+          name: Install example app v2 Hex dependencies
+          working_directory: examples/example-phx-1_2
+          command: mix deps.get
+      - run:
+          name: Install example app v3 node dependencies
           working_directory: examples/example-phx-1_3
-          command: yarn install
+          command: npm install
+      - run:
+          name: Install example app v3 Hex dependencies
+          working_directory: examples/example-phx-1_3
+          command: mix deps.get
       - run:
           name: Run tests
           command: ./bin/ci
