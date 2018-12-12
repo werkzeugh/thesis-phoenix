@@ -6,7 +6,7 @@ defaults: &defaults
         MIX_ENV: test
     - image: circleci/postgres:10-alpine-postgis
       environment:
-        POSTGRES_USER: root
+        POSTGRES_USER: postgres
         POSTGRES_HOST: localhost
   working_directory: ~/repo
 
