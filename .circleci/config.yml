@@ -43,9 +43,17 @@ jobs:
           working_directory: examples/example-phx-1_3
           command: |
             mix deps.get
-    #   - run:
-    #       name: Run tests
-    #       command: ./bin/ci
+      - run:
+          name: Install chromedriver
+          working_directory: ~/chromedriver
+          command: |
+            curl -O https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux.zip
+            unzip chromedriver_linux.zip
+            PATH=~/chromedriver/:$PATH
+            apt-get install libnss3
+      - run:
+          name: Run tests
+          command: ./bin/ci
       - save_cache:
           key: v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
           paths:
