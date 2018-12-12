@@ -25,10 +25,6 @@ jobs:
           keys:
             - v1-build-cache-{{ .Branch }}
             - v1-build-cache
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
       - run:
           name: Install Hex
           command: mix local.hex --force
@@ -39,20 +35,9 @@ jobs:
           name: Install mix dependencies
           command: mix deps.get
       - run:
-          name: Install node dependencies
-          command: npm install
-      - run:
-          name: Install example app v2 node dependencies
-          working_directory: examples/example-phx-1_2
-          command: npm install
-      - run:
           name: Install example app v2 Hex dependencies
           working_directory: examples/example-phx-1_2
           command: mix deps.get
-      - run:
-          name: Install example app v3 node dependencies
-          working_directory: examples/example-phx-1_3
-          command: npm install
       - run:
           name: Install example app v3 Hex dependencies
           working_directory: examples/example-phx-1_3
@@ -80,11 +65,3 @@ jobs:
           key: v1-build-cache
           paths:
             - _build
-      - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
-          paths:
-            - assets/node_modules
-      - save_cache:
-          key: v1-dependencies-
-          paths:
-            - assets/node_modules
