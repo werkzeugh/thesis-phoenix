@@ -10,5 +10,4 @@ yarn-error.log
 .DS_Store
 nohup.out
 yarn-error.log
-yarn.lock
 package-lock.json
