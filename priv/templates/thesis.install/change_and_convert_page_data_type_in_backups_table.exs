@@ -32,7 +32,7 @@ defmodule <%= base %>.Repo.Migrations.ChangeAndConvertPageDataTypeInBackupsTable
   end
 
   def backups() do
-    repo().all(Backup)
+    Thesis.Config.repo().all(Backup)
   end
 
   def decompress_page_data(page_data) do
@@ -46,7 +46,7 @@ defmodule <%= base %>.Repo.Migrations.ChangeAndConvertPageDataTypeInBackupsTable
   def save_converted_page_data(backups) do
     backups
     |> Enum.map(fn(b) -> conversion_changeset(b, :page_data, b.page_data) end)
-    |> Enum.map(fn(b) -> repo().update!(b) end)
+    |> Enum.map(fn(b) -> Thesis.Config.repo().update!(b) end)
   end
 
   def conversion_changeset(backup, key, value) do
