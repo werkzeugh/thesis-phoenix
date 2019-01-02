@@ -1,63 +1,52 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.16.4">
-    <title>Thesis.EctoStore – thesis v0.3.0</title>
-    <link rel="stylesheet" href="dist/app-091c05798a.css" />
-    
-      <link rel="canonical" href="https://hexdocs.pm/thesis/Thesis.EctoStore.html" />
-    
-    
-    <script src="dist/sidebar_items-e9b8066c9c.js"></script>
+    <meta name="generator" content="ExDoc v0.19.2">
+    <title>Thesis.EctoStore — thesis v0.3.1</title>
+    <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
+    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
     
   </head>
   <body data-type="modules">
     <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
-
     <div class="main">
-<button class="sidebar-toggle">
+<button class="sidebar-button sidebar-toggle">
   <span class="icon-menu" aria-hidden="true"></span>
   <span class="sr-only">Toggle Sidebar</span>
 </button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
 <section class="sidebar">
 
-  
   <a href="api-reference.html" class="sidebar-projectLink">
     <div class="sidebar-projectDetails">
       <h1 class="sidebar-projectName">
-        thesis
-      </h1>
+thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.0
+        v0.3.1
       </h2>
     </div>
-    
   </a>
 
   <form class="sidebar-search" action="search.html">
     <button type="submit" class="search-button">
       <span class="icon-search" aria-hidden="true"></span>
     </button>
-    <input name="q" type="text" id="search-list" class="search-input" placeholder="search" aria-label="Search" autocomplete="off" />
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
   </form>
 
   <ul class="sidebar-listNav">
     <li><a id="extras-list" href="#full-list">Pages</a></li>
 
-    
       <li><a id="modules-list" href="#full-list">Modules</a></li>
-    
 
-    
 
-    
-
-    
       <li><a id="tasks-list" href="#full-list">Mix Tasks</a></li>
-    
   </ul>
   <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
@@ -69,24 +58,19 @@
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.0</small>
-        Thesis.EctoStore
-        
-      </h1>
+        <small class="visible-xs">thesis v0.3.1</small>
+Thesis.EctoStore              </h1>
 
-      
+
         <section id="moduledoc">
-          <p>Thesis.EctoStore is the most commonly-used store for Thesis pages and content.
-It interfaces with the host application’s repo (which is provided in the
+<p>Thesis.EctoStore is the most commonly-used store for Thesis pages and content.
+It interfaces with the host application&#39;s repo (which is provided in the
 config.exs of the host applicaton).</p>
-<p>You can generally just use Thesis.EctoStore unless you’re not using Ecto in
+<p>You can generally just use Thesis.EctoStore unless you&#39;re not using Ecto in
 your project or you want to do something custom with how Thesis is handling
 its data.</p>
-
         </section>
-      
 
-      
         <section id="summary" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#summary">
@@ -95,310 +79,222 @@ its data.</p>
             </a>
             Summary
           </h1>
-          
-
-          
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
     </h2>
-    <div class="summary-row">
+<div class="summary-row">
   <div class="summary-signature">
     <a href="#backups/1">backups(page_slug)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Retrieves all backups for a given slug. Returns the backup</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#delete/1">delete(map)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Deletes a given page by slug</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#file/1">file(slug)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Retrieves a file by slug</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#page/1">page(slug)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Returns a Thesis.Page struct with the given slug (aka request_path)</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#page_content/2">page_content(page_id, name)</a>
   </div>
-  
-    <div class="summary-synopsis"><p>Retrieves a single %PageContent{} (or nil, if it doesn’t exist) based on page_id
+    <div class="summary-synopsis"><p>Retrieves a single %PageContent{} (or nil, if it doesn&#39;t exist) based on page_id
 and name</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#page_content_or_new/3">page_content_or_new(page_id, name, preloaded_contents)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Returns an existing %PageContent{} record or a newly created one with the
 provided page_id and name set</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#page_contents/1">page_contents(slug)</a>
   </div>
-  
-    <div class="summary-synopsis"><p>Handles `%Page{…}`` struct - means page has been edited and saved.
+    <div class="summary-synopsis"><p>Handles `%Page{...}`` struct - means page has been edited and saved.
 Retrieves page content and global content</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#restore/1">restore(id)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Retrieves a given backup (identified by its id). Returns the backup</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#update/2">update(page_params, contents_params)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Updates a page and its page_contents and global content areas</p>
 </div>
-  
 </div>
-
   </div>
-
-
-          
-
         </section>
-      
 
-      
-
-      
         <section id="functions" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#functions">
               <span class="icon-link" aria-hidden="true"></span>
               <span class="sr-only">Link to this section</span>
             </a>
-            Functions
-          </h1>
-          <div class="detail" id="backups/1">
-  
-  
-  <div class="detail-header">
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="backups/1">
+    <div class="detail-header">
     <a href="#backups/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">backups(page_slug)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">backups(page_slug)</span>
+          </div>
   <section class="docstring">
-    <p>Retrieves all backups for a given slug. Returns the backup.</p>
-<pre><code class="elixir">backups(slug)</code></pre>
+<p>Retrieves all backups for a given slug. Returns the backup.</p>
+<pre><code class="nohighlight makeup elixir"><span class="n">backups</span><span class="p" data-group-id="9180850336-1">(</span><span class="n">slug</span><span class="p" data-group-id="9180850336-1">)</span></code></pre>
 <p>Callback implementation for <a href="Thesis.Store.html#c:backups/1"><code class="inline">Thesis.Store.backups/1</code></a>.</p>
-
   </section>
-</div>
-<div class="detail" id="delete/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="delete/1">
+    <div class="detail-header">
     <a href="#delete/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">delete(map)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">delete(map)</span>
+          </div>
   <section class="docstring">
-    <p>Deletes a given page by slug.</p>
-
+<p>Deletes a given page by slug.</p>
   </section>
-</div>
-<div class="detail" id="file/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="file/1">
+    <div class="detail-header">
     <a href="#file/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">file(slug)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">file(slug)</span>
+          </div>
   <section class="docstring">
-    <p>Retrieves a file by slug.</p>
-
+<p>Retrieves a file by slug.</p>
   </section>
-</div>
-<div class="detail" id="page/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="page/1">
+    <div class="detail-header">
     <a href="#page/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">page(slug)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">page(slug)</span>
+          </div>
   <section class="docstring">
-    <p>Returns a Thesis.Page struct with the given slug (aka request_path).</p>
+<p>Returns a Thesis.Page struct with the given slug (aka request_path).</p>
 <p>Callback implementation for <a href="Thesis.Store.html#c:page/1"><code class="inline">Thesis.Store.page/1</code></a>.</p>
-
   </section>
-</div>
-<div class="detail" id="page_content/2">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="page_content/2">
+    <div class="detail-header">
     <a href="#page_content/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">page_content(page_id, name)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">page_content(page_id, name)</span>
+          </div>
   <section class="docstring">
-    <p>Retrieves a single %PageContent{} (or nil, if it doesn’t exist) based on page_id
+<p>Retrieves a single %PageContent{} (or nil, if it doesn&#39;t exist) based on page_id
 and name.</p>
-
   </section>
-</div>
-<div class="detail" id="page_content_or_new/3">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="page_content_or_new/3">
+    <div class="detail-header">
     <a href="#page_content_or_new/3" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">page_content_or_new(page_id, name, preloaded_contents)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">page_content_or_new(page_id, name, preloaded_contents)</span>
+          </div>
   <section class="docstring">
-    <p>Returns an existing %PageContent{} record or a newly created one with the
+<p>Returns an existing %PageContent{} record or a newly created one with the
 provided page_id and name set.</p>
-
   </section>
-</div>
-<div class="detail" id="page_contents/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="page_contents/1">
+    <div class="detail-header">
     <a href="#page_contents/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">page_contents(slug)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">page_contents(slug)</span>
+          </div>
   <section class="docstring">
-    <p>Handles `%Page{…}`` struct - means page has been edited and saved.
+<p>Handles `%Page{...}`` struct - means page has been edited and saved.
 Retrieves page content and global content.</p>
-
   </section>
-</div>
-<div class="detail" id="restore/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="restore/1">
+    <div class="detail-header">
     <a href="#restore/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">restore(id)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">restore(id)</span>
+          </div>
   <section class="docstring">
-    <p>Retrieves a given backup (identified by its id). Returns the backup.</p>
-<pre><code class="elixir">restore(backup_id)</code></pre>
+<p>Retrieves a given backup (identified by its id). Returns the backup.</p>
+<pre><code class="nohighlight makeup elixir"><span class="n">restore</span><span class="p" data-group-id="3588618292-1">(</span><span class="n">backup_id</span><span class="p" data-group-id="3588618292-1">)</span></code></pre>
 <p>Callback implementation for <a href="Thesis.Store.html#c:restore/1"><code class="inline">Thesis.Store.restore/1</code></a>.</p>
-
   </section>
-</div>
-<div class="detail" id="update/2">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="update/2">
+    <div class="detail-header">
     <a href="#update/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">update(page_params, contents_params)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">update(page_params, contents_params)</span>
+          </div>
   <section class="docstring">
-    <p>Updates a page and its page_contents and global content areas.</p>
-
+<p>Updates a page and its page_contents and global content areas.</p>
   </section>
-</div>
-
+</section>
+          </div>
         </section>
-      
-
-      
           <footer class="footer">
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.4),
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.2),
           </span>
           <span class="line">
             designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
             </span>
         </p>
-        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
       </footer>
     </div>
   </div>
 </section>
 </div>
-  <script src="dist/app-574613960f.js"></script>
+  <script src="dist/html-c1666276880c0f8e3769.js"></script>
   
   </body>
 </html>

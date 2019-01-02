@@ -1,63 +1,52 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.16.4">
-    <title>Thesis.Store – thesis v0.3.0</title>
-    <link rel="stylesheet" href="dist/app-091c05798a.css" />
-    
-      <link rel="canonical" href="https://hexdocs.pm/thesis/Thesis.Store.html" />
-    
-    
-    <script src="dist/sidebar_items-e9b8066c9c.js"></script>
+    <meta name="generator" content="ExDoc v0.19.2">
+    <title>Thesis.Store — thesis v0.3.1</title>
+    <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
+    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
     
   </head>
   <body data-type="modules">
     <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
-
     <div class="main">
-<button class="sidebar-toggle">
+<button class="sidebar-button sidebar-toggle">
   <span class="icon-menu" aria-hidden="true"></span>
   <span class="sr-only">Toggle Sidebar</span>
 </button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
 <section class="sidebar">
 
-  
   <a href="api-reference.html" class="sidebar-projectLink">
     <div class="sidebar-projectDetails">
       <h1 class="sidebar-projectName">
-        thesis
-      </h1>
+thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.0
+        v0.3.1
       </h2>
     </div>
-    
   </a>
 
   <form class="sidebar-search" action="search.html">
     <button type="submit" class="search-button">
       <span class="icon-search" aria-hidden="true"></span>
     </button>
-    <input name="q" type="text" id="search-list" class="search-input" placeholder="search" aria-label="Search" autocomplete="off" />
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
   </form>
 
   <ul class="sidebar-listNav">
     <li><a id="extras-list" href="#full-list">Pages</a></li>
 
-    
       <li><a id="modules-list" href="#full-list">Modules</a></li>
-    
 
-    
 
-    
-
-    
       <li><a id="tasks-list" href="#full-list">Mix Tasks</a></li>
-    
   </ul>
   <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
@@ -69,21 +58,16 @@
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.0</small>
-        Thesis.Store <small>behaviour</small>
-        
-      </h1>
+        <small class="visible-xs">thesis v0.3.1</small>
+Thesis.Store <small>behaviour</small>              </h1>
 
-      
+
         <section id="moduledoc">
-          <p>Thesis.Store is an Elixir “behaviour” that defines the public function
+<p>Thesis.Store is an Elixir &quot;behaviour&quot; that defines the public function
 interface necessary for Thesis to use a particular store module.</p>
 <p>There are currently four required functions, as described below.</p>
-
         </section>
-      
 
-      
         <section id="summary" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#summary">
@@ -92,268 +76,192 @@ interface necessary for Thesis to use a particular store module.</p>
             </a>
             Summary
           </h1>
-          
-
-          
-
-          
   <div class="summary-callbacks summary">
     <h2>
       <a href="#callbacks">Callbacks</a>
     </h2>
-    <div class="summary-row">
+<div class="summary-row">
   <div class="summary-signature">
     <a href="#c:backups/1">backups(arg0)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Retrieves all backups for a given slug. Returns the backup</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#c:delete/1">delete(%{})</a>
   </div>
-  
     <div class="summary-synopsis"><p>Deletes the given page (identified by its slug).
 Returns <code class="inline">{:ok, page}</code> or <code class="inline">{:error, changeset}</code></p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#c:page/1">page(arg0)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Returns a Thesis.Page struct with the given slug (aka request_path)</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#c:page_contents/1">page_contents(arg0)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Returns a list of related Thesis.PageContent structs both for the given
 Thesis.Page struct and global content areas. This is generally used to
 populate the page content using the Thesis.View.content/4 function</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#c:restore/1">restore(arg0)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Retrieves a given backup (identified by its id). Returns the backup</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#c:update/2">update(%{}, map)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Updates the given page (identified by its slug) with the given map of
 string keys and Thesis.PageContent structs.
 Returns <code class="inline">{:ok, page}</code> or <code class="inline">{:error, changeset}</code></p>
 </div>
-  
 </div>
-
   </div>
-
-
         </section>
-      
 
-      
-
-      
-
-      
         <section id="callbacks" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#callbacks">
               <span class="icon-link" aria-hidden="true"></span>
               <span class="sr-only">Link to this section</span>
             </a>
-            Callbacks
-          </h1>
-          <div class="detail" id="c:backups/1">
-  
-  
-  <div class="detail-header">
+Callbacks          </h1>
+          <div class="callbacks-list">
+<section class="detail" id="c:backups/1">
+    <div class="detail-header">
     <a href="#c:backups/1" class="detail-link" title="Link to this callback">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <span class="signature">backups(arg0)</span>
-    
-    
-    
+    <h1 class="signature">backups(arg0)</span>
+        
       <div class="specs">
-        
-          <pre>backups(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) :: [<a href="Thesis.Backup.html#t:t/0">Thesis.Backup.t</a>]</pre>
-        
+          <pre>backups(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: [<a href="Thesis.Backup.html#t:t/0">Thesis.Backup.t</a>()]</pre>
       </div>
-    
   </div>
   <section class="docstring">
-    <p>Retrieves all backups for a given slug. Returns the backup.</p>
-<pre><code class="elixir">backups(slug)</code></pre>
-
+<p>Retrieves all backups for a given slug. Returns the backup.</p>
+<pre><code class="nohighlight makeup elixir"><span class="n">backups</span><span class="p" data-group-id="9299868373-1">(</span><span class="n">slug</span><span class="p" data-group-id="9299868373-1">)</span></code></pre>
   </section>
-</div>
-<div class="detail" id="c:delete/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="c:delete/1">
+    <div class="detail-header">
     <a href="#c:delete/1" class="detail-link" title="Link to this callback">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <span class="signature">delete(%{})</span>
-    
-    
-    
+    <h1 class="signature">delete(%{})</span>
+        
       <div class="specs">
-        
-          <pre>delete(%{optional(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) => <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>}) :: {atom, any}</pre>
-        
+          <pre>delete(%{optional(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) => <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
       </div>
-    
   </div>
   <section class="docstring">
-    <p>Deletes the given page (identified by its slug).
+<p>Deletes the given page (identified by its slug).
 Returns <code class="inline">{:ok, page}</code> or <code class="inline">{:error, changeset}</code>.</p>
-<pre><code class="elixir">delete(%{&quot;slug&quot; =&gt; &quot;/asdf&quot;})</code></pre>
-
+<pre><code class="nohighlight makeup elixir"><span class="n">delete</span><span class="p" data-group-id="4300596826-1">(</span><span class="p" data-group-id="4300596826-2">%{</span><span class="s">&quot;slug&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;/asdf&quot;</span><span class="p" data-group-id="4300596826-2">}</span><span class="p" data-group-id="4300596826-1">)</span></code></pre>
   </section>
-</div>
-<div class="detail" id="c:page/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="c:page/1">
+    <div class="detail-header">
     <a href="#c:page/1" class="detail-link" title="Link to this callback">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <span class="signature">page(arg0)</span>
-    
-    
-    
+    <h1 class="signature">page(arg0)</span>
+        
       <div class="specs">
-        
-          <pre>page(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) :: <a href="Thesis.Page.html#t:t/0">Thesis.Page.t</a></pre>
-        
+          <pre>page(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="Thesis.Page.html#t:t/0">Thesis.Page.t</a>()</pre>
       </div>
-    
   </div>
   <section class="docstring">
-    <p>Returns a Thesis.Page struct with the given slug (aka request_path).</p>
-
+<p>Returns a Thesis.Page struct with the given slug (aka request_path).</p>
   </section>
-</div>
-<div class="detail" id="c:page_contents/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="c:page_contents/1">
+    <div class="detail-header">
     <a href="#c:page_contents/1" class="detail-link" title="Link to this callback">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <span class="signature">page_contents(arg0)</span>
-    
-    
-    
+    <h1 class="signature">page_contents(arg0)</span>
+        
       <div class="specs">
-        
-          <pre>page_contents(<a href="Thesis.Page.html#t:t/0">Thesis.Page.t</a>) :: [<a href="Thesis.PageContent.html#t:t/0">Thesis.PageContent.t</a>]</pre>
-        
+          <pre>page_contents(<a href="Thesis.Page.html#t:t/0">Thesis.Page.t</a>()) :: [<a href="Thesis.PageContent.html#t:t/0">Thesis.PageContent.t</a>()]</pre>
       </div>
-    
   </div>
   <section class="docstring">
-    <p>Returns a list of related Thesis.PageContent structs both for the given
+<p>Returns a list of related Thesis.PageContent structs both for the given
 Thesis.Page struct and global content areas. This is generally used to
 populate the page content using the Thesis.View.content/4 function.</p>
-
   </section>
-</div>
-<div class="detail" id="c:restore/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="c:restore/1">
+    <div class="detail-header">
     <a href="#c:restore/1" class="detail-link" title="Link to this callback">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <span class="signature">restore(arg0)</span>
-    
-    
-    
+    <h1 class="signature">restore(arg0)</span>
+        
       <div class="specs">
-        
-          <pre>restore(<a href="https://hexdocs.pm/elixir/Integer.html#t:t/0">Integer.t</a>) :: <a href="Thesis.Backup.html#t:t/0">Thesis.Backup.t</a></pre>
-        
+          <pre>restore(<a href="https://hexdocs.pm/elixir/Integer.html#t:t/0">Integer.t</a>()) :: <a href="Thesis.Backup.html#t:t/0">Thesis.Backup.t</a>()</pre>
       </div>
-    
   </div>
   <section class="docstring">
-    <p>Retrieves a given backup (identified by its id). Returns the backup.</p>
-<pre><code class="elixir">restore(backup_id)</code></pre>
-
+<p>Retrieves a given backup (identified by its id). Returns the backup.</p>
+<pre><code class="nohighlight makeup elixir"><span class="n">restore</span><span class="p" data-group-id="4034028157-1">(</span><span class="n">backup_id</span><span class="p" data-group-id="4034028157-1">)</span></code></pre>
   </section>
-</div>
-<div class="detail" id="c:update/2">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="c:update/2">
+    <div class="detail-header">
     <a href="#c:update/2" class="detail-link" title="Link to this callback">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <span class="signature">update(%{}, map)</span>
-    
-    
-    
+    <h1 class="signature">update(%{}, map)</span>
+        
       <div class="specs">
-        
-          <pre>update(%{optional(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) => <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>}, map) :: {atom, any}</pre>
-        
+          <pre>update(%{optional(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) => <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
       </div>
-    
   </div>
   <section class="docstring">
-    <p>Updates the given page (identified by its slug) with the given map of
+<p>Updates the given page (identified by its slug) with the given map of
 string keys and Thesis.PageContent structs.
 Returns <code class="inline">{:ok, page}</code> or <code class="inline">{:error, changeset}</code>.</p>
-<pre><code class="elixir">update(%{&quot;slug&quot; =&gt; &quot;/&quot;}, %{&quot;Heading&quot; =&gt; &quot;My Heading Content&quot;})</code></pre>
-
+<pre><code class="nohighlight makeup elixir"><span class="n">update</span><span class="p" data-group-id="7860670989-1">(</span><span class="p" data-group-id="7860670989-2">%{</span><span class="s">&quot;slug&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="7860670989-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7860670989-3">%{</span><span class="s">&quot;Heading&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;My Heading Content&quot;</span><span class="p" data-group-id="7860670989-3">}</span><span class="p" data-group-id="7860670989-1">)</span></code></pre>
   </section>
-</div>
-
+</section>
+          </div>
         </section>
-      
           <footer class="footer">
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.4),
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.2),
           </span>
           <span class="line">
             designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
             </span>
         </p>
-        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
       </footer>
     </div>
   </div>
 </section>
 </div>
-  <script src="dist/app-574613960f.js"></script>
+  <script src="dist/html-c1666276880c0f8e3769.js"></script>
   
   </body>
 </html>

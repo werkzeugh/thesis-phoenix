@@ -1,63 +1,52 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.16.4">
-    <title>Thesis.Utilities – thesis v0.3.0</title>
-    <link rel="stylesheet" href="dist/app-091c05798a.css" />
-    
-      <link rel="canonical" href="https://hexdocs.pm/thesis/Thesis.Utilities.html" />
-    
-    
-    <script src="dist/sidebar_items-e9b8066c9c.js"></script>
+    <meta name="generator" content="ExDoc v0.19.2">
+    <title>Thesis.Utilities — thesis v0.3.1</title>
+    <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
+    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
     
   </head>
   <body data-type="modules">
     <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
-
     <div class="main">
-<button class="sidebar-toggle">
+<button class="sidebar-button sidebar-toggle">
   <span class="icon-menu" aria-hidden="true"></span>
   <span class="sr-only">Toggle Sidebar</span>
 </button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
 <section class="sidebar">
 
-  
   <a href="api-reference.html" class="sidebar-projectLink">
     <div class="sidebar-projectDetails">
       <h1 class="sidebar-projectName">
-        thesis
-      </h1>
+thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.0
+        v0.3.1
       </h2>
     </div>
-    
   </a>
 
   <form class="sidebar-search" action="search.html">
     <button type="submit" class="search-button">
       <span class="icon-search" aria-hidden="true"></span>
     </button>
-    <input name="q" type="text" id="search-list" class="search-input" placeholder="search" aria-label="Search" autocomplete="off" />
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
   </form>
 
   <ul class="sidebar-listNav">
     <li><a id="extras-list" href="#full-list">Pages</a></li>
 
-    
       <li><a id="modules-list" href="#full-list">Modules</a></li>
-    
 
-    
 
-    
-
-    
       <li><a id="tasks-list" href="#full-list">Mix Tasks</a></li>
-    
   </ul>
   <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
@@ -69,19 +58,14 @@
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.0</small>
-        Thesis.Utilities
-        
-      </h1>
+        <small class="visible-xs">thesis v0.3.1</small>
+Thesis.Utilities              </h1>
 
-      
+
         <section id="moduledoc">
-          <p>Module that provides helper functions.</p>
-
+<p>Module that provides helper functions.</p>
         </section>
-      
 
-      
         <section id="summary" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#summary">
@@ -90,256 +74,192 @@
             </a>
             Summary
           </h1>
-          
-
-          
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
     </h2>
-    <div class="summary-row">
+<div class="summary-row">
   <div class="summary-signature">
     <a href="#normalize_path/1">normalize_path(path)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Takes a URL and strips unnecessary characters</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#parameterize/1">parameterize(str)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Removes special characters, keeps dashes and underscores, and replaces spaces
 with dashes. Also downcases the entire string</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#random_string/1">random_string(length)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Generates a random string of letters of a given length</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#random_string/2">random_string(length, atom)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Generates a random string of digits of a given length</p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#to_s/1">to_s(arg)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Shorthand <code class="inline">to_string</code></p>
 </div>
-  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#typeof/1">typeof(x)</a>
   </div>
-  
     <div class="summary-synopsis"><p>Returns the data type for the provided data using guard functions</p>
 </div>
-  
 </div>
-
   </div>
-
-
-          
-
         </section>
-      
 
-      
-
-      
         <section id="functions" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#functions">
               <span class="icon-link" aria-hidden="true"></span>
               <span class="sr-only">Link to this section</span>
             </a>
-            Functions
-          </h1>
-          <div class="detail" id="normalize_path/1">
-  
-  
-  <div class="detail-header">
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="normalize_path/1">
+    <div class="detail-header">
     <a href="#normalize_path/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">normalize_path(path)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">normalize_path(path)</span>
+          </div>
   <section class="docstring">
-    <p>Takes a URL and strips unnecessary characters.</p>
-<pre><code class="iex elixir">iex&gt; import Thesis.Utilities
-iex&gt; normalize_path(&quot;//ignite//foo&quot;)
-&quot;/ignite/foo&quot;
-iex&gt; normalize_path(&quot;/ignite/foo/&quot;)
-&quot;/ignite/foo&quot;
-iex&gt; normalize_path(&quot;/&quot;)
-&quot;/&quot;</code></pre>
-
+<p>Takes a URL and strips unnecessary characters.</p>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="8533762726-1">(</span><span class="s">&quot;//ignite//foo&quot;</span><span class="p" data-group-id="8533762726-1">)</span><span class="w">
+</span><span class="s">&quot;/ignite/foo&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="8533762726-2">(</span><span class="s">&quot;/ignite/foo/&quot;</span><span class="p" data-group-id="8533762726-2">)</span><span class="w">
+</span><span class="s">&quot;/ignite/foo&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="8533762726-3">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="8533762726-3">)</span><span class="w">
+</span><span class="s">&quot;/&quot;</span></code></pre>
   </section>
-</div>
-<div class="detail" id="parameterize/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="parameterize/1">
+    <div class="detail-header">
     <a href="#parameterize/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">parameterize(str)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">parameterize(str)</span>
+          </div>
   <section class="docstring">
-    <p>Removes special characters, keeps dashes and underscores, and replaces spaces
+<p>Removes special characters, keeps dashes and underscores, and replaces spaces
 with dashes. Also downcases the entire string.</p>
-<pre><code class="iex elixir">iex&gt; import Thesis.Utilities
-iex&gt; parameterize(&quot;Jamon is so cool!&quot;)
-&quot;jamon-is-so-cool&quot;
-iex&gt; parameterize(&quot;%#d50SDF dfsJ FDS  lkdsf f dfka   a&quot;)
-&quot;d50sdf-dfsj-fds--lkdsf-f-dfka---a&quot;
-iex&gt; parameterize(:this_is_a_test)
-&quot;this-is-a-test&quot;</code></pre>
-
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="0755211886-1">(</span><span class="s">&quot;Jamon is so cool!&quot;</span><span class="p" data-group-id="0755211886-1">)</span><span class="w">
+</span><span class="s">&quot;jamon-is-so-cool&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="0755211886-2">(</span><span class="s">&quot;%#d50SDF dfsJ FDS  lkdsf f dfka   a&quot;</span><span class="p" data-group-id="0755211886-2">)</span><span class="w">
+</span><span class="s">&quot;d50sdf-dfsj-fds--lkdsf-f-dfka---a&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="0755211886-3">(</span><span class="ss">:this_is_a_test</span><span class="p" data-group-id="0755211886-3">)</span><span class="w">
+</span><span class="s">&quot;this-is-a-test&quot;</span></code></pre>
   </section>
-</div>
-<div class="detail" id="random_string/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="random_string/1">
+    <div class="detail-header">
     <a href="#random_string/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">random_string(length)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">random_string(length)</span>
+          </div>
   <section class="docstring">
-    <p>Generates a random string of letters of a given length.</p>
-<pre><code class="iex elixir">iex&gt; import Thesis.Utilities
-iex&gt; String.length(random_string(15))
-15
-iex&gt; random_string(15) != random_string(15)
-true</code></pre>
-
+<p>Generates a random string of letters of a given length.</p>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">length</span><span class="p" data-group-id="3561096764-1">(</span><span class="n">random_string</span><span class="p" data-group-id="3561096764-2">(</span><span class="mi">15</span><span class="p" data-group-id="3561096764-2">)</span><span class="p" data-group-id="3561096764-1">)</span><span class="w">
+</span><span class="mi">15</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">random_string</span><span class="p" data-group-id="3561096764-3">(</span><span class="mi">15</span><span class="p" data-group-id="3561096764-3">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">random_string</span><span class="p" data-group-id="3561096764-4">(</span><span class="mi">15</span><span class="p" data-group-id="3561096764-4">)</span><span class="w">
+</span><span class="no">true</span></code></pre>
   </section>
-</div>
-<div class="detail" id="random_string/2">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="random_string/2">
+    <div class="detail-header">
     <a href="#random_string/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">random_string(length, atom)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">random_string(length, atom)</span>
+          </div>
   <section class="docstring">
-    <p>Generates a random string of digits of a given length.</p>
-<pre><code class="iex elixir">iex&gt; import Thesis.Utilities
-iex&gt; String.length(random_string(15, :numeric))
-15
-iex&gt; random_string(15, :numeric) != random_string(15, :numeric)
-true
-iex&gt; String.to_integer(random_string(15, :numeric)) &gt; 0
-true</code></pre>
-
+<p>Generates a random string of digits of a given length.</p>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">length</span><span class="p" data-group-id="0081492729-1">(</span><span class="n">random_string</span><span class="p" data-group-id="0081492729-2">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="0081492729-2">)</span><span class="p" data-group-id="0081492729-1">)</span><span class="w">
+</span><span class="mi">15</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">random_string</span><span class="p" data-group-id="0081492729-3">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="0081492729-3">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">random_string</span><span class="p" data-group-id="0081492729-4">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="0081492729-4">)</span><span class="w">
+</span><span class="no">true</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">to_integer</span><span class="p" data-group-id="0081492729-5">(</span><span class="n">random_string</span><span class="p" data-group-id="0081492729-6">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="0081492729-6">)</span><span class="p" data-group-id="0081492729-5">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="no">true</span></code></pre>
   </section>
-</div>
-<div class="detail" id="to_s/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="to_s/1">
+    <div class="detail-header">
     <a href="#to_s/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">to_s(arg)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">to_s(arg)</span>
+          </div>
   <section class="docstring">
-    <p>Shorthand <code class="inline">to_string</code>.</p>
-<pre><code class="iex elixir">iex&gt; import Thesis.Utilities
-iex&gt; to_s(000001)
-&quot;1&quot;
-iex&gt; to_s(123)
-&quot;123&quot;</code></pre>
-
+<p>Shorthand <code class="inline">to_string</code>.</p>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">to_s</span><span class="p" data-group-id="9225126877-1">(</span><span class="mi">000001</span><span class="p" data-group-id="9225126877-1">)</span><span class="w">
+</span><span class="s">&quot;1&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">to_s</span><span class="p" data-group-id="9225126877-2">(</span><span class="mi">123</span><span class="p" data-group-id="9225126877-2">)</span><span class="w">
+</span><span class="s">&quot;123&quot;</span></code></pre>
   </section>
-</div>
-<div class="detail" id="typeof/1">
-  
-  
-  <div class="detail-header">
+</section>
+<section class="detail" id="typeof/1">
+    <div class="detail-header">
     <a href="#typeof/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">typeof(x)</span>
-    
-    
-    
-  </div>
+    <h1 class="signature">typeof(x)</span>
+          </div>
   <section class="docstring">
-    <p>Returns the data type for the provided data using guard functions.</p>
-<pre><code class="iex elixir">iex&gt; import Thesis.Utilities
-iex&gt; typeof(000001)
-&quot;integer&quot;
-iex&gt; typeof([1,2,3])
-&quot;list&quot;</code></pre>
-
+<p>Returns the data type for the provided data using guard functions.</p>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">typeof</span><span class="p" data-group-id="4590116096-1">(</span><span class="mi">000001</span><span class="p" data-group-id="4590116096-1">)</span><span class="w">
+</span><span class="s">&quot;integer&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">typeof</span><span class="p" data-group-id="4590116096-2">(</span><span class="p" data-group-id="4590116096-3">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="4590116096-3">]</span><span class="p" data-group-id="4590116096-2">)</span><span class="w">
+</span><span class="s">&quot;list&quot;</span></code></pre>
   </section>
-</div>
-
+</section>
+          </div>
         </section>
-      
-
-      
           <footer class="footer">
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.4),
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.2),
           </span>
           <span class="line">
             designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
             </span>
         </p>
-        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
       </footer>
     </div>
   </div>
 </section>
 </div>
-  <script src="dist/app-574613960f.js"></script>
+  <script src="dist/html-c1666276880c0f8e3769.js"></script>
   
   </body>
 </html>

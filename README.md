@@ -64,6 +64,11 @@
 
   <tr><td><h4>Changelog</h4></td></tr>
   <tr>
+    <td><strong>0.3.1</strong></td>
+    - Fixes issue #155 [pr #156](https://github.com/infinitered/thesis-phoenix/pull/156)
+    Ambiguous call to function repo/0 on `mix ecto.migrate` - Phoenix 1.4
+  </tr>
+  <tr>
     <td>
       <strong>0.3.0</strong><br/>
       - Removes the LZString compression for backups (page revisions) as per the conversation <a href="https://github.com/infinitered/thesis-phoenix/issues/129">here</a>. <br/>
@@ -96,13 +101,13 @@
 
 # ![](http://placehold.it/890x200/2b1e34/ffffff?text=-%20Installation+%26+Configuration%20-)
 
-*If you are having problems, view `README_INSTALL.md` for manual instructions.*
+_If you are having problems, view `README_INSTALL.md` for manual instructions._
 
 ##### 1. Add thesis to your `mix.exs`:
 
 ```elixir
 def deps do
-  [{:thesis, "~> 0.3.0"}]
+  [{:thesis, "~> 0.3.1"}]
 end
 
 def application do
@@ -127,6 +132,7 @@ as generate migrations and an authorization module in your `lib/thesis_auth.ex`.
 ```
 $ mix ecto.migrate
 ```
+
 <br/>
 
 ---
@@ -171,17 +177,18 @@ becomes...
 ```
 
 ### Custom HTML Editor
+
 Don't like the MediumEditor? Write your own custom editor implementing the common editor interface.
 
 ```js
 class MyCustomEditor {
-  constructor (opts) {
-    this.onChange = opts.onChange
+  constructor(opts) {
+    this.onChange = opts.onChange;
   }
-  enable () {}        // Setup Editor
-  disable () {}       // Teardown Editor
-  content (editor) {} // Return content
-  set (name, data) {} // Set content
+  enable() {} // Setup Editor
+  disable() {} // Teardown Editor
+  content(editor) {} // Return content
+  set(name, data) {} // Set content
 }
 ```
 
@@ -193,6 +200,7 @@ To enable, add this in your config/config.exs file:
 config :thesis,
   html_editor: "MyCustomEditor"
 ```
+
 <br/>
 
 ---
@@ -210,6 +218,7 @@ becomes...
 ```eex
 <h1><%= content(@conn, "Title identifier", :text, do: "My Title") %></h1>
 ```
+
 <br/>
 
 ---
@@ -229,6 +238,7 @@ becomes...
   <iframe width="560" height="315" src="https://www.youtube.com/embed/5SVLs_NN_uY" frameborder="0" allowfullscreen></iframe>
 <% end %>
 ```
+
 <br/>
 
 ---
@@ -266,6 +276,7 @@ Thesis offers support for a few different ways to handle image uploads: store fi
 point to an uploader/adapter inside your custom app, or use one of the prebuilt adapters (in progress).
 
 ##### Store Files in Database
+
 For smaller websites and/or website that are hosted on the cloud, thesis offers a no-setup-required image uploader.
 Files are stored in a separate table and contain all of the needed metadata (name, file type, and blobs themselves).
 Keep in mind as you upload more and more files, your database will grow quickly. Don't use this for high-traffic,
@@ -291,7 +302,6 @@ config :thesis,
 The module should have an `upload/1` function that accepts a `%Plug.Upload{}` struct. This function should return either `{:ok, "path/to/file.jpg"}` tuple with an image url or path, or `{:error, _}`. You can view
 [/lib/thesis/uploaders/repo_uploader.ex](https://github.com/infinitered/thesis-phoenix/blob/master/lib/thesis/uploaders/repo_uploader.ex)
 for an example.
-
 
 That's it! Restart your server and image content areas will now contain a
 file upload field.
@@ -328,6 +338,7 @@ You can provide an ID and additional classes by specifying `id` and `classes`, r
   <h1>Title</h1>
 <% end %>
 ```
+
 <br/>
 
 ---
@@ -350,12 +361,12 @@ def about(conn, params) do
   @description = Thesis.View.page_description(conn, "A relevant description here.")
 end
 ```
+
 <br/>
 
 ---
 
 # ![](http://placehold.it/890x200/2b1e34/ffffff?text=-%20%20%20%20%20%20%20Dynamic+Pages%20%20%20%20%20%20%20-)
-
 
 Thesis supports users creating and deleting dynamically routed pages. These
 differ from static pages in that they are routed by Thesis rather than Phoenix,
@@ -405,6 +416,7 @@ routing more specifically. For example, if you want a blog section:
 
   get "/blog/*path", <MyApp>.BlogController, :dynamic
 ```
+
 <br/>
 
 ---
@@ -466,6 +478,7 @@ defmodule MyApp.ThesisAuth do
   end
 end
 ```
+
 <br/>
 
 ---
@@ -539,7 +552,7 @@ websites. Please help us improve!
 7. Run `./bin/ci` in the root directory to ensure that Thesis tests pass.
 8. Push to the branch (`git push origin my-new-feature`)
 9. Create new Pull Request
-<br/>
+   <br/>
 
 ---
 
@@ -552,9 +565,9 @@ websites. Please help us improve!
 
 # ![](http://placehold.it/890x200/2b1e34/ffffff?text=-%20%20%20%20%20%20Key+Contributors%20%20%20%20%20%20-)
 
-| [Jamon Holmgren](https://twitter.com/jamonholmgren)  | [Yulian Glukhenko](https://github.com/yulolimum) | [Ken Miller](https://github.com/kemiller) | [Daniel Berkompas](https://twitter.com/dberkom) |
-| ------------- | ------------- | ------------- | ------------- |
-| <img src="https://infinite.red/images/avatars/img-avatar-jamon@2x.jpg" width="165">  | <img src="https://infinite.red/images/avatars/img-avatar-yulian@2x.jpg" width="165">  | <img src="https://infinite.red/images/avatars/img-avatar-ken@2x.jpg" width="165"> | <img src="https://infinite.red/images/avatars/img-avatar-daniel@2x.jpg" width="165"> |
+| [Jamon Holmgren](https://twitter.com/jamonholmgren)                                 | [Yulian Glukhenko](https://github.com/yulolimum)                                     | [Ken Miller](https://github.com/kemiller)                                         | [Daniel Berkompas](https://twitter.com/dberkom)                                      |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| <img src="https://infinite.red/images/avatars/img-avatar-jamon@2x.jpg" width="165"> | <img src="https://infinite.red/images/avatars/img-avatar-yulian@2x.jpg" width="165"> | <img src="https://infinite.red/images/avatars/img-avatar-ken@2x.jpg" width="165"> | <img src="https://infinite.red/images/avatars/img-avatar-daniel@2x.jpg" width="165"> |
 
 Also supported by others on the [Infinite Red](https://infinite.red) team.
 <br/>
