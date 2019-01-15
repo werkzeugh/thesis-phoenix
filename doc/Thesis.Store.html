@@ -5,9 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.2">
-    <title>Thesis.Store — thesis v0.3.1</title>
+    <title>Thesis.Store — thesis v0.3.2</title>
     <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
-    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
+    <script src="dist/sidebar_items-faefb02862.js"></script>
     
   </head>
   <body data-type="modules">
@@ -28,7 +28,7 @@
       <h1 class="sidebar-projectName">
 thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.1
+        v0.3.2
       </h2>
     </div>
   </a>
@@ -58,7 +58,7 @@ thesis      </h1>
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.1</small>
+        <small class="visible-xs">thesis v0.3.2</small>
 Thesis.Store <small>behaviour</small>              </h1>
 
 
@@ -152,7 +152,7 @@ Callbacks          </h1>
   </div>
   <section class="docstring">
 <p>Retrieves all backups for a given slug. Returns the backup.</p>
-<pre><code class="nohighlight makeup elixir"><span class="n">backups</span><span class="p" data-group-id="9299868373-1">(</span><span class="n">slug</span><span class="p" data-group-id="9299868373-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="n">backups</span><span class="p" data-group-id="6312388625-1">(</span><span class="n">slug</span><span class="p" data-group-id="6312388625-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="c:delete/1">
@@ -170,7 +170,7 @@ Callbacks          </h1>
   <section class="docstring">
 <p>Deletes the given page (identified by its slug).
 Returns <code class="inline">{:ok, page}</code> or <code class="inline">{:error, changeset}</code>.</p>
-<pre><code class="nohighlight makeup elixir"><span class="n">delete</span><span class="p" data-group-id="4300596826-1">(</span><span class="p" data-group-id="4300596826-2">%{</span><span class="s">&quot;slug&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;/asdf&quot;</span><span class="p" data-group-id="4300596826-2">}</span><span class="p" data-group-id="4300596826-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="n">delete</span><span class="p" data-group-id="8793818838-1">(</span><span class="p" data-group-id="8793818838-2">%{</span><span class="s">&quot;slug&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;/asdf&quot;</span><span class="p" data-group-id="8793818838-2">}</span><span class="p" data-group-id="8793818838-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="c:page/1">
@@ -221,7 +221,7 @@ populate the page content using the Thesis.View.content/4 function.</p>
   </div>
   <section class="docstring">
 <p>Retrieves a given backup (identified by its id). Returns the backup.</p>
-<pre><code class="nohighlight makeup elixir"><span class="n">restore</span><span class="p" data-group-id="4034028157-1">(</span><span class="n">backup_id</span><span class="p" data-group-id="4034028157-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="n">restore</span><span class="p" data-group-id="4359983647-1">(</span><span class="n">backup_id</span><span class="p" data-group-id="4359983647-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="c:update/2">
@@ -240,7 +240,7 @@ populate the page content using the Thesis.View.content/4 function.</p>
 <p>Updates the given page (identified by its slug) with the given map of
 string keys and Thesis.PageContent structs.
 Returns <code class="inline">{:ok, page}</code> or <code class="inline">{:error, changeset}</code>.</p>
-<pre><code class="nohighlight makeup elixir"><span class="n">update</span><span class="p" data-group-id="7860670989-1">(</span><span class="p" data-group-id="7860670989-2">%{</span><span class="s">&quot;slug&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="7860670989-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7860670989-3">%{</span><span class="s">&quot;Heading&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;My Heading Content&quot;</span><span class="p" data-group-id="7860670989-3">}</span><span class="p" data-group-id="7860670989-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="n">update</span><span class="p" data-group-id="3966015902-1">(</span><span class="p" data-group-id="3966015902-2">%{</span><span class="s">&quot;slug&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="3966015902-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3966015902-3">%{</span><span class="s">&quot;Heading&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;My Heading Content&quot;</span><span class="p" data-group-id="3966015902-3">}</span><span class="p" data-group-id="3966015902-1">)</span></code></pre>
   </section>
 </section>
           </div>

@@ -5,9 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.2">
-    <title>Thesis.Controller — thesis v0.3.1</title>
+    <title>Thesis.Controller — thesis v0.3.2</title>
     <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
-    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
+    <script src="dist/sidebar_items-faefb02862.js"></script>
     
   </head>
   <body data-type="modules">
@@ -28,7 +28,7 @@
       <h1 class="sidebar-projectName">
 thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.1
+        v0.3.2
       </h2>
     </div>
   </a>
@@ -58,7 +58,7 @@ thesis      </h1>
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.1</small>
+        <small class="visible-xs">thesis v0.3.2</small>
 Thesis.Controller              </h1>
 
 
@@ -66,16 +66,16 @@ Thesis.Controller              </h1>
 <p>Provides a plug that preloads any Thesis content for a page.
 Typically, you&#39;ll add this to your <code class="inline">web/web.ex</code> file, under the <code class="inline">controller</code>
 function:</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">controller</span><span class="w"> </span><span class="k" data-group-id="5786642992-1">do</span><span class="w">
-  </span><span class="k">quote</span><span class="w"> </span><span class="k" data-group-id="5786642992-2">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">controller</span><span class="w"> </span><span class="k" data-group-id="0637977842-1">do</span><span class="w">
+  </span><span class="k">quote</span><span class="w"> </span><span class="k" data-group-id="0637977842-2">do</span><span class="w">
     </span><span class="kn">use</span><span class="w"> </span><span class="nc">Phoenix.Controller</span><span class="w">
     </span><span class="kn">use</span><span class="w"> </span><span class="nc">Thesis.Controller</span><span class="w">
     </span><span class="c1"># ...</span><span class="w">
-  </span><span class="k" data-group-id="5786642992-2">end</span><span class="w">
-</span><span class="k" data-group-id="5786642992-1">end</span></code></pre>
+  </span><span class="k" data-group-id="0637977842-2">end</span><span class="w">
+</span><span class="k" data-group-id="0637977842-1">end</span></code></pre>
 <p>If you&#39;d prefer to only use Thesis in certain controllers, remove it from
 <code class="inline">web/web.ex</code> and add it to the specific controllers by doing this:</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.MyController</span><span class="w"> </span><span class="k" data-group-id="8319439909-1">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.MyController</span><span class="w"> </span><span class="k" data-group-id="3353822046-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Thesis.Controller</span><span class="w">
   </span><span class="c1"># ...</span></code></pre>
         </section>

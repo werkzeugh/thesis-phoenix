@@ -5,9 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.2">
-    <title>Thesis.View — thesis v0.3.1</title>
+    <title>Thesis.View — thesis v0.3.2</title>
     <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
-    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
+    <script src="dist/sidebar_items-faefb02862.js"></script>
     
   </head>
   <body data-type="modules">
@@ -28,7 +28,7 @@
       <h1 class="sidebar-projectName">
 thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.1
+        v0.3.2
       </h2>
     </div>
   </a>
@@ -58,7 +58,7 @@ thesis      </h1>
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.1</small>
+        <small class="visible-xs">thesis v0.3.2</small>
 Thesis.View              </h1>
 
 
@@ -67,15 +67,15 @@ Thesis.View              </h1>
 function. Look at individual function documentation to learn more about them.</p>
 <p>Typically, you&#39;ll add this to your <code class="inline">web/web.ex</code> file, under the <code class="inline">view</code>
 function:</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">view</span><span class="w"> </span><span class="k" data-group-id="4465705122-1">do</span><span class="w">
-  </span><span class="k">quote</span><span class="w"> </span><span class="k" data-group-id="4465705122-2">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">view</span><span class="w"> </span><span class="k" data-group-id="6107749284-1">do</span><span class="w">
+  </span><span class="k">quote</span><span class="w"> </span><span class="k" data-group-id="6107749284-2">do</span><span class="w">
     </span><span class="kn">use</span><span class="w"> </span><span class="nc">Thesis.View</span><span class="w">
     </span><span class="c1"># ...</span><span class="w">
-  </span><span class="k" data-group-id="4465705122-2">end</span><span class="w">
-</span><span class="k" data-group-id="4465705122-1">end</span></code></pre>
+  </span><span class="k" data-group-id="6107749284-2">end</span><span class="w">
+</span><span class="k" data-group-id="6107749284-1">end</span></code></pre>
 <p>If you&#39;d prefer, you can remove it from <code class="inline">web/web.ex</code> and add it to your views
 yourself:</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.MyView</span><span class="w"> </span><span class="k" data-group-id="8338038527-1">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.MyView</span><span class="w"> </span><span class="k" data-group-id="0734315901-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Thesis.View</span><span class="w">
   </span><span class="c1"># ...</span></code></pre>
         </section>
@@ -102,6 +102,11 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#content/5">content(conn, name, type, opts, list)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#current_page/1">current_page(conn)</a>
   </div>
     <div class="summary-synopsis"><p>Returns the current page as a Thesis.Page{} struct</p>
@@ -114,6 +119,11 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
     <div class="summary-synopsis"><p>Creates a globally editable content area in an eex template. Returns HTML-safe
 string if type is <code class="inline">:html</code> or just a string if <code class="inline">:text</code></p>
 </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#global_content/5">global_content(conn, name, type, opts, list)</a>
+  </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -171,11 +181,30 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p" data-group-id="6870849227-1">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:text</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="6870849227-1">)</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
-</span><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p" data-group-id="6870849227-2">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:html</span><span class="p" data-group-id="6870849227-2">)</span><span class="w"> </span><span class="k" data-group-id="6870849227-3">do</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p" data-group-id="6123489512-1">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:text</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="6123489512-1">)</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p" data-group-id="6123489512-2">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:html</span><span class="p" data-group-id="6123489512-2">)</span><span class="w"> </span><span class="k" data-group-id="6123489512-3">do</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
   </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Default</span><span class="w"> </span><span class="n">description</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
   </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Another</span><span class="w"> </span><span class="n">paragraph</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
-</span><span class="o">&lt;</span><span class="p">%</span><span class="w"> </span><span class="k" data-group-id="6870849227-3">end</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span></code></pre>
+</span><span class="o">&lt;</span><span class="p">%</span><span class="w"> </span><span class="k" data-group-id="6123489512-3">end</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p" data-group-id="6123489512-4">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:html</span><span class="p">,</span><span class="w"> </span><span class="ss">classes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;more classes&quot;</span><span class="p" data-group-id="6123489512-4">)</span><span class="w"> </span><span class="k" data-group-id="6123489512-5">do</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Default</span><span class="w"> </span><span class="n">description</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="p">%</span><span class="w"> </span><span class="k" data-group-id="6123489512-5">end</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="content/5">
+    <div class="detail-header">
+    <a href="#content/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">content(conn, name, type, opts, list)</span>
+        
+      <div class="specs">
+          <pre>content(<a href="https://hexdocs.pm/plug/1.4.3/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | {:safe, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="current_page/1">
@@ -192,8 +221,8 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
   </div>
   <section class="docstring">
 <p>Returns the current page as a Thesis.Page{} struct.</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">current_page</span><span class="p" data-group-id="2569997455-1">(</span><span class="p" data-group-id="2569997455-2">%</span><span class="nc" data-group-id="2569997455-2">Plug.Conn</span><span class="p" data-group-id="2569997455-2">{</span><span class="ss">request_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test&quot;</span><span class="p" data-group-id="2569997455-2">}</span><span class="p" data-group-id="2569997455-1">)</span><span class="w">
-</span><span class="p" data-group-id="2569997455-3">%</span><span class="nc" data-group-id="2569997455-3">Thesis.Page</span><span class="p" data-group-id="2569997455-3">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test&quot;</span><span class="p" data-group-id="2569997455-3">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">current_page</span><span class="p" data-group-id="3249595909-1">(</span><span class="p" data-group-id="3249595909-2">%</span><span class="nc" data-group-id="3249595909-2">Plug.Conn</span><span class="p" data-group-id="3249595909-2">{</span><span class="ss">request_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test&quot;</span><span class="p" data-group-id="3249595909-2">}</span><span class="p" data-group-id="3249595909-1">)</span><span class="w">
+</span><span class="p" data-group-id="3249595909-3">%</span><span class="nc" data-group-id="3249595909-3">Thesis.Page</span><span class="p" data-group-id="3249595909-3">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test&quot;</span><span class="p" data-group-id="3249595909-3">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="global_content/4">
@@ -219,11 +248,30 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">global_content</span><span class="p" data-group-id="2029766136-1">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:text</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="2029766136-1">)</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
-</span><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">global_content</span><span class="p" data-group-id="2029766136-2">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:html</span><span class="p" data-group-id="2029766136-2">)</span><span class="w"> </span><span class="k" data-group-id="2029766136-3">do</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">global_content</span><span class="p" data-group-id="5127048266-1">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:text</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="5127048266-1">)</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">global_content</span><span class="p" data-group-id="5127048266-2">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:html</span><span class="p" data-group-id="5127048266-2">)</span><span class="w"> </span><span class="k" data-group-id="5127048266-3">do</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
   </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Default</span><span class="w"> </span><span class="n">description</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
   </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Another</span><span class="w"> </span><span class="n">paragraph</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
-</span><span class="o">&lt;</span><span class="p">%</span><span class="w"> </span><span class="k" data-group-id="2029766136-3">end</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span></code></pre>
+</span><span class="o">&lt;</span><span class="p">%</span><span class="w"> </span><span class="k" data-group-id="5127048266-3">end</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="p">%</span><span class="o">=</span><span class="w"> </span><span class="n">global_content</span><span class="p" data-group-id="5127048266-4">(</span><span class="na">@conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:html</span><span class="p">,</span><span class="w"> </span><span class="ss">classes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;more classes&quot;</span><span class="p" data-group-id="5127048266-4">)</span><span class="w"> </span><span class="k" data-group-id="5127048266-5">do</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Default</span><span class="w"> </span><span class="n">description</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="p">%</span><span class="w"> </span><span class="k" data-group-id="5127048266-5">end</span><span class="w"> </span><span class="p">%</span><span class="o">&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="global_content/5">
+    <div class="detail-header">
+    <a href="#global_content/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">global_content(conn, name, type, opts, list)</span>
+        
+      <div class="specs">
+          <pre>global_content(<a href="https://hexdocs.pm/plug/1.4.3/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | {:safe, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="page_description/2">
@@ -237,13 +285,13 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
   <section class="docstring">
 <p>Outputs the page title or a provided default.</p>
 <p>Doctests:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7735530300-1">%</span><span class="nc" data-group-id="7735530300-1">Thesis.Page</span><span class="p" data-group-id="7735530300-1">{</span><span class="ss">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test Description&quot;</span><span class="p" data-group-id="7735530300-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7735530300-2">%</span><span class="nc" data-group-id="7735530300-2">Plug.Conn</span><span class="p" data-group-id="7735530300-2">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7735530300-3">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="7735530300-3">}</span><span class="p" data-group-id="7735530300-2">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_description</span><span class="p" data-group-id="7735530300-4">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Description&quot;</span><span class="p" data-group-id="7735530300-4">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2334210507-1">%</span><span class="nc" data-group-id="2334210507-1">Thesis.Page</span><span class="p" data-group-id="2334210507-1">{</span><span class="ss">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test Description&quot;</span><span class="p" data-group-id="2334210507-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2334210507-2">%</span><span class="nc" data-group-id="2334210507-2">Plug.Conn</span><span class="p" data-group-id="2334210507-2">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2334210507-3">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="2334210507-3">}</span><span class="p" data-group-id="2334210507-2">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_description</span><span class="p" data-group-id="2334210507-4">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Description&quot;</span><span class="p" data-group-id="2334210507-4">)</span><span class="w">
 </span><span class="s">&quot;Test Description&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7735530300-5">%</span><span class="nc" data-group-id="7735530300-5">Thesis.Page</span><span class="p" data-group-id="7735530300-5">{</span><span class="p" data-group-id="7735530300-5">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7735530300-6">%</span><span class="nc" data-group-id="7735530300-6">Plug.Conn</span><span class="p" data-group-id="7735530300-6">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7735530300-7">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="7735530300-7">}</span><span class="p" data-group-id="7735530300-6">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_description</span><span class="p" data-group-id="7735530300-8">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Description&quot;</span><span class="p" data-group-id="7735530300-8">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2334210507-5">%</span><span class="nc" data-group-id="2334210507-5">Thesis.Page</span><span class="p" data-group-id="2334210507-5">{</span><span class="p" data-group-id="2334210507-5">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2334210507-6">%</span><span class="nc" data-group-id="2334210507-6">Plug.Conn</span><span class="p" data-group-id="2334210507-6">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2334210507-7">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="2334210507-7">}</span><span class="p" data-group-id="2334210507-6">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_description</span><span class="p" data-group-id="2334210507-8">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Description&quot;</span><span class="p" data-group-id="2334210507-8">)</span><span class="w">
 </span><span class="s">&quot;Default Description&quot;</span></code></pre>
   </section>
 </section>
@@ -258,13 +306,13 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
   <section class="docstring">
 <p>Outputs the page title or a provided default.</p>
 <p>Doctests:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3976242689-1">%</span><span class="nc" data-group-id="3976242689-1">Thesis.Page</span><span class="p" data-group-id="3976242689-1">{</span><span class="ss">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test Title&quot;</span><span class="p" data-group-id="3976242689-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3976242689-2">%</span><span class="nc" data-group-id="3976242689-2">Plug.Conn</span><span class="p" data-group-id="3976242689-2">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3976242689-3">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="3976242689-3">}</span><span class="p" data-group-id="3976242689-2">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_title</span><span class="p" data-group-id="3976242689-4">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="3976242689-4">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0430643965-1">%</span><span class="nc" data-group-id="0430643965-1">Thesis.Page</span><span class="p" data-group-id="0430643965-1">{</span><span class="ss">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test Title&quot;</span><span class="p" data-group-id="0430643965-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0430643965-2">%</span><span class="nc" data-group-id="0430643965-2">Plug.Conn</span><span class="p" data-group-id="0430643965-2">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0430643965-3">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="0430643965-3">}</span><span class="p" data-group-id="0430643965-2">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_title</span><span class="p" data-group-id="0430643965-4">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="0430643965-4">)</span><span class="w">
 </span><span class="s">&quot;Test Title&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3976242689-5">%</span><span class="nc" data-group-id="3976242689-5">Thesis.Page</span><span class="p" data-group-id="3976242689-5">{</span><span class="p" data-group-id="3976242689-5">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3976242689-6">%</span><span class="nc" data-group-id="3976242689-6">Plug.Conn</span><span class="p" data-group-id="3976242689-6">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3976242689-7">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="3976242689-7">}</span><span class="p" data-group-id="3976242689-6">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_title</span><span class="p" data-group-id="3976242689-8">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="3976242689-8">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0430643965-5">%</span><span class="nc" data-group-id="0430643965-5">Thesis.Page</span><span class="p" data-group-id="0430643965-5">{</span><span class="p" data-group-id="0430643965-5">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0430643965-6">%</span><span class="nc" data-group-id="0430643965-6">Plug.Conn</span><span class="p" data-group-id="0430643965-6">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0430643965-7">%{</span><span class="ss">thesis_page</span><span class="p">:</span><span class="w"> </span><span class="n">page</span><span class="p" data-group-id="0430643965-7">}</span><span class="p" data-group-id="0430643965-6">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">page_title</span><span class="p" data-group-id="0430643965-8">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default Title&quot;</span><span class="p" data-group-id="0430643965-8">)</span><span class="w">
 </span><span class="s">&quot;Default Title&quot;</span></code></pre>
   </section>
 </section>
@@ -285,16 +333,16 @@ string if type is <code class="inline">:html</code> or just a string if <code cl
 current user, and then renders the editor, style tag, and bootstrap js.</p>
 <p>If not editable, simply returns an empty string.</p>
 <p>Doctests:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="p" data-group-id="3712612705-1">{</span><span class="ss">:safe</span><span class="p">,</span><span class="w"> </span><span class="n">editor</span><span class="p" data-group-id="3712612705-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">thesis_editor</span><span class="p" data-group-id="3712612705-2">(</span><span class="p" data-group-id="3712612705-3">%</span><span class="nc" data-group-id="3712612705-3">Plug.Conn</span><span class="p" data-group-id="3712612705-3">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3712612705-4">%{</span><span class="ss">thesis_editable</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3712612705-4">}</span><span class="p" data-group-id="3712612705-3">}</span><span class="p" data-group-id="3712612705-2">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="3712612705-5">(</span><span class="n">editor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/thesis/thesis.css&quot;</span><span class="p" data-group-id="3712612705-5">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="p" data-group-id="4041339481-1">{</span><span class="ss">:safe</span><span class="p">,</span><span class="w"> </span><span class="n">editor</span><span class="p" data-group-id="4041339481-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">thesis_editor</span><span class="p" data-group-id="4041339481-2">(</span><span class="p" data-group-id="4041339481-3">%</span><span class="nc" data-group-id="4041339481-3">Plug.Conn</span><span class="p" data-group-id="4041339481-3">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4041339481-4">%{</span><span class="ss">thesis_editable</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4041339481-4">}</span><span class="p" data-group-id="4041339481-3">}</span><span class="p" data-group-id="4041339481-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="4041339481-5">(</span><span class="n">editor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/thesis/thesis.css&quot;</span><span class="p" data-group-id="4041339481-5">)</span><span class="w">
 </span><span class="no">true</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="3712612705-6">(</span><span class="n">editor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;thesis-container&quot;</span><span class="p" data-group-id="3712612705-6">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="4041339481-6">(</span><span class="n">editor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;thesis-container&quot;</span><span class="p" data-group-id="4041339481-6">)</span><span class="w">
 </span><span class="no">true</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="3712612705-7">(</span><span class="n">editor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;script&gt;&quot;</span><span class="p" data-group-id="3712612705-7">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="4041339481-7">(</span><span class="n">editor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;script&gt;&quot;</span><span class="p" data-group-id="4041339481-7">)</span><span class="w">
 </span><span class="no">true</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">thesis_editor</span><span class="p" data-group-id="3712612705-8">(</span><span class="p" data-group-id="3712612705-9">%</span><span class="nc" data-group-id="3712612705-9">Plug.Conn</span><span class="p" data-group-id="3712612705-9">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3712612705-10">%{</span><span class="ss">thesis_editable</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="3712612705-10">}</span><span class="p" data-group-id="3712612705-9">}</span><span class="p" data-group-id="3712612705-8">)</span><span class="w">
-</span><span class="p" data-group-id="3712612705-11">{</span><span class="ss">:safe</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="3712612705-11">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.View</span><span class="o">.</span><span class="n">thesis_editor</span><span class="p" data-group-id="4041339481-8">(</span><span class="p" data-group-id="4041339481-9">%</span><span class="nc" data-group-id="4041339481-9">Plug.Conn</span><span class="p" data-group-id="4041339481-9">{</span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4041339481-10">%{</span><span class="ss">thesis_editable</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="4041339481-10">}</span><span class="p" data-group-id="4041339481-9">}</span><span class="p" data-group-id="4041339481-8">)</span><span class="w">
+</span><span class="p" data-group-id="4041339481-11">{</span><span class="ss">:safe</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="4041339481-11">}</span></code></pre>
   </section>
 </section>
           </div>

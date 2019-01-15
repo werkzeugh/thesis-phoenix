@@ -10,14 +10,16 @@
 
 #### Pushing a new release
 
-1. run `npm run webpack` to build the static css/js files
+1. run `yarn webpack` to build the static css/js files
 1. run `mix hex.user whoami`
 1. check if your hex user is in the [owner's list](https://hex.pm/packages/thesis) of the package (if not, you will need to get added as an owner)
 1. update the version number in:
-  - `./mix.exs`
-  - `./package.json`
-  - `./README_INSTALL.md`
-  - `./README.md` (also update the changelog)
+
+- `./mix.exs`
+- `./package.json`
+- `./README_INSTALL.md`
+- `./README.md` (also update the changelog)
+
 1. generate docs: `mix docs`
 1. run `mix hex.publish`
 

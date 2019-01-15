@@ -5,9 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.2">
-    <title>Thesis.Page — thesis v0.3.1</title>
+    <title>Thesis.Page — thesis v0.3.2</title>
     <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
-    <script src="dist/sidebar_items-871fa3d7b4.js"></script>
+    <script src="dist/sidebar_items-faefb02862.js"></script>
     
   </head>
   <body data-type="modules">
@@ -28,7 +28,7 @@
       <h1 class="sidebar-projectName">
 thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.1
+        v0.3.2
       </h2>
     </div>
   </a>
@@ -58,7 +58,7 @@ thesis      </h1>
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.1</small>
+        <small class="visible-xs">thesis v0.3.2</small>
 Thesis.Page              </h1>
 
 
@@ -174,11 +174,11 @@ Functions          </h1>
   <section class="docstring">
 <p>Returns whether the page redirects to another page.</p>
 <p>Examples:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.Page</span><span class="o">.</span><span class="n">redirected?</span><span class="p" data-group-id="7496013648-1">(</span><span class="p" data-group-id="7496013648-2">%</span><span class="nc" data-group-id="7496013648-2">Thesis.Page</span><span class="p" data-group-id="7496013648-2">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">redirect_url</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p" data-group-id="7496013648-2">}</span><span class="p" data-group-id="7496013648-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.Page</span><span class="o">.</span><span class="n">redirected?</span><span class="p" data-group-id="2514406652-1">(</span><span class="p" data-group-id="2514406652-2">%</span><span class="nc" data-group-id="2514406652-2">Thesis.Page</span><span class="p" data-group-id="2514406652-2">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">redirect_url</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p" data-group-id="2514406652-2">}</span><span class="p" data-group-id="2514406652-1">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.Page</span><span class="o">.</span><span class="n">redirected?</span><span class="p" data-group-id="7496013648-3">(</span><span class="p" data-group-id="7496013648-4">%</span><span class="nc" data-group-id="7496013648-4">Thesis.Page</span><span class="p" data-group-id="7496013648-4">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">redirect_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="7496013648-4">}</span><span class="p" data-group-id="7496013648-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.Page</span><span class="o">.</span><span class="n">redirected?</span><span class="p" data-group-id="2514406652-3">(</span><span class="p" data-group-id="2514406652-4">%</span><span class="nc" data-group-id="2514406652-4">Thesis.Page</span><span class="p" data-group-id="2514406652-4">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">redirect_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="2514406652-4">}</span><span class="p" data-group-id="2514406652-3">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.Page</span><span class="o">.</span><span class="n">redirected?</span><span class="p" data-group-id="7496013648-5">(</span><span class="p" data-group-id="7496013648-6">%</span><span class="nc" data-group-id="7496013648-6">Thesis.Page</span><span class="p" data-group-id="7496013648-6">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">redirect_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/asdf&quot;</span><span class="p" data-group-id="7496013648-6">}</span><span class="p" data-group-id="7496013648-5">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Thesis.Page</span><span class="o">.</span><span class="n">redirected?</span><span class="p" data-group-id="2514406652-5">(</span><span class="p" data-group-id="2514406652-6">%</span><span class="nc" data-group-id="2514406652-6">Thesis.Page</span><span class="p" data-group-id="2514406652-6">{</span><span class="ss">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">redirect_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/asdf&quot;</span><span class="p" data-group-id="2514406652-6">}</span><span class="p" data-group-id="2514406652-5">)</span><span class="w">
 </span><span class="no">true</span></code></pre>
   </section>
 </section>
