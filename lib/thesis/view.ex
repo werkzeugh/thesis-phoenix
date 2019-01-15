@@ -40,11 +40,20 @@ defmodule Thesis.View do
         <p>Default description</p>
         <p>Another paragraph</p>
       <% end %>
+      <%= content(@conn, "Description", :html, classes: "more classes") do %>
+        <p>Default description</p>
+      <% end %>
   """
   @spec content(Plug.Conn.t, String.t, String.t, list) :: String.t | {:safe, String.t}
   def content(conn, name, type, opts \\ [do: ""]) do
     page = current_page(conn)
     render_content(conn, page.id, name, type, opts)
+  end
+
+  @spec content(Plug.Conn.t, String.t, String.t, list, list) :: String.t | {:safe, String.t}
+  def content(conn, name, type, opts, [do: block]) do
+    page = current_page(conn)
+    render_content(conn, page.id, name, type, Keyword.put(opts, :do, block))
   end
 
   @doc """
@@ -58,11 +67,20 @@ defmodule Thesis.View do
         <p>Default description</p>
         <p>Another paragraph</p>
       <% end %>
+      <%= global_content(@conn, "Description", :html, classes: "more classes") do %>
+        <p>Default description</p>
+      <% end %>
   """
   @spec global_content(Plug.Conn.t, String.t, String.t, list) :: String.t | {:safe, String.t}
   def global_content(conn, name, type, opts \\ [do: ""]) do
     opts = Keyword.put(opts, :global, true)
     render_content(conn, nil, name, type, opts)
+  end
+
+  @spec global_content(Plug.Conn.t, String.t, String.t, list, list) :: String.t | {:safe, String.t}
+  def global_content(conn, name, type, opts, [do: block]) do
+    opts = Keyword.put(opts, :global, true)
+    render_content(conn, nil, name, type, Keyword.put(opts, :do, block))
   end
 
   defp render_content(conn, page_id, name, type, opts) do
