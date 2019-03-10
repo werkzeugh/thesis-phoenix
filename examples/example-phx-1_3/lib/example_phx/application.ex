@@ -14,7 +14,7 @@ defmodule ExamplePhx.Application do
       supervisor(ExamplePhxWeb.Endpoint, [])
       # Start your own worker by calling: ExamplePhx.Worker.start_link(arg1, arg2, arg3)
       # worker(ExamplePhx.Worker, [arg1, arg2, arg3]),
-    ] ++ env_children(Mix.env)
+    ] ++ env_children(Application.get_env(:example_phx, :env))
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

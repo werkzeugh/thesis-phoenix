@@ -9,6 +9,8 @@ use Mix.Config
 config :example_phx,
   ecto_repos: [ExamplePhx.Repo]
 
+config :example_phx, env: Mix.env
+
 # Configures the endpoint
 config :example_phx, ExamplePhxWeb.Endpoint,
   url: [host: "localhost"],
