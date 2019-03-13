@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.2">
-    <title>Thesis.Utilities — thesis v0.3.2</title>
+    <title>Thesis.Utilities — thesis v0.3.3</title>
     <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
       <link rel="canonical" href="https://hexdocs.pm/thesis/Thesis.Utilities.html" />
     <script src="dist/sidebar_items-faefb02862.js"></script>
@@ -29,7 +29,7 @@
       <h1 class="sidebar-projectName">
 thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.2
+        v0.3.3
       </h2>
     </div>
   </a>
@@ -59,7 +59,7 @@ thesis      </h1>
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.2</small>
+        <small class="visible-xs">thesis v0.3.3</small>
 Thesis.Utilities              </h1>
 
 
@@ -144,11 +144,11 @@ Functions          </h1>
   <section class="docstring">
 <p>Takes a URL and strips unnecessary characters.</p>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="5845250609-1">(</span><span class="s">&quot;//ignite//foo&quot;</span><span class="p" data-group-id="5845250609-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="8276568626-1">(</span><span class="s">&quot;//ignite//foo&quot;</span><span class="p" data-group-id="8276568626-1">)</span><span class="w">
 </span><span class="s">&quot;/ignite/foo&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="5845250609-2">(</span><span class="s">&quot;/ignite/foo/&quot;</span><span class="p" data-group-id="5845250609-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="8276568626-2">(</span><span class="s">&quot;/ignite/foo/&quot;</span><span class="p" data-group-id="8276568626-2">)</span><span class="w">
 </span><span class="s">&quot;/ignite/foo&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="5845250609-3">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="5845250609-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">normalize_path</span><span class="p" data-group-id="8276568626-3">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="8276568626-3">)</span><span class="w">
 </span><span class="s">&quot;/&quot;</span></code></pre>
   </section>
 </section>
@@ -164,11 +164,11 @@ Functions          </h1>
 <p>Removes special characters, keeps dashes and underscores, and replaces spaces
 with dashes. Also downcases the entire string.</p>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="7456753088-1">(</span><span class="s">&quot;Jamon is so cool!&quot;</span><span class="p" data-group-id="7456753088-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="0421630199-1">(</span><span class="s">&quot;Jamon is so cool!&quot;</span><span class="p" data-group-id="0421630199-1">)</span><span class="w">
 </span><span class="s">&quot;jamon-is-so-cool&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="7456753088-2">(</span><span class="s">&quot;%#d50SDF dfsJ FDS  lkdsf f dfka   a&quot;</span><span class="p" data-group-id="7456753088-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="0421630199-2">(</span><span class="s">&quot;%#d50SDF dfsJ FDS  lkdsf f dfka   a&quot;</span><span class="p" data-group-id="0421630199-2">)</span><span class="w">
 </span><span class="s">&quot;d50sdf-dfsj-fds--lkdsf-f-dfka---a&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="7456753088-3">(</span><span class="ss">:this_is_a_test</span><span class="p" data-group-id="7456753088-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">parameterize</span><span class="p" data-group-id="0421630199-3">(</span><span class="ss">:this_is_a_test</span><span class="p" data-group-id="0421630199-3">)</span><span class="w">
 </span><span class="s">&quot;this-is-a-test&quot;</span></code></pre>
   </section>
 </section>
@@ -183,9 +183,9 @@ with dashes. Also downcases the entire string.</p>
   <section class="docstring">
 <p>Generates a random string of letters of a given length.</p>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">length</span><span class="p" data-group-id="5240254468-1">(</span><span class="n">random_string</span><span class="p" data-group-id="5240254468-2">(</span><span class="mi">15</span><span class="p" data-group-id="5240254468-2">)</span><span class="p" data-group-id="5240254468-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">length</span><span class="p" data-group-id="8686670881-1">(</span><span class="n">random_string</span><span class="p" data-group-id="8686670881-2">(</span><span class="mi">15</span><span class="p" data-group-id="8686670881-2">)</span><span class="p" data-group-id="8686670881-1">)</span><span class="w">
 </span><span class="mi">15</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">random_string</span><span class="p" data-group-id="5240254468-3">(</span><span class="mi">15</span><span class="p" data-group-id="5240254468-3">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">random_string</span><span class="p" data-group-id="5240254468-4">(</span><span class="mi">15</span><span class="p" data-group-id="5240254468-4">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">random_string</span><span class="p" data-group-id="8686670881-3">(</span><span class="mi">15</span><span class="p" data-group-id="8686670881-3">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">random_string</span><span class="p" data-group-id="8686670881-4">(</span><span class="mi">15</span><span class="p" data-group-id="8686670881-4">)</span><span class="w">
 </span><span class="no">true</span></code></pre>
   </section>
 </section>
@@ -200,11 +200,11 @@ with dashes. Also downcases the entire string.</p>
   <section class="docstring">
 <p>Generates a random string of digits of a given length.</p>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">length</span><span class="p" data-group-id="6251880511-1">(</span><span class="n">random_string</span><span class="p" data-group-id="6251880511-2">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="6251880511-2">)</span><span class="p" data-group-id="6251880511-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">length</span><span class="p" data-group-id="5281217417-1">(</span><span class="n">random_string</span><span class="p" data-group-id="5281217417-2">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="5281217417-2">)</span><span class="p" data-group-id="5281217417-1">)</span><span class="w">
 </span><span class="mi">15</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">random_string</span><span class="p" data-group-id="6251880511-3">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="6251880511-3">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">random_string</span><span class="p" data-group-id="6251880511-4">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="6251880511-4">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">random_string</span><span class="p" data-group-id="5281217417-3">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="5281217417-3">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">random_string</span><span class="p" data-group-id="5281217417-4">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="5281217417-4">)</span><span class="w">
 </span><span class="no">true</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">to_integer</span><span class="p" data-group-id="6251880511-5">(</span><span class="n">random_string</span><span class="p" data-group-id="6251880511-6">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="6251880511-6">)</span><span class="p" data-group-id="6251880511-5">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">String</span><span class="o">.</span><span class="n">to_integer</span><span class="p" data-group-id="5281217417-5">(</span><span class="n">random_string</span><span class="p" data-group-id="5281217417-6">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="ss">:numeric</span><span class="p" data-group-id="5281217417-6">)</span><span class="p" data-group-id="5281217417-5">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="no">true</span></code></pre>
   </section>
 </section>
@@ -219,9 +219,9 @@ with dashes. Also downcases the entire string.</p>
   <section class="docstring">
 <p>Shorthand <code class="inline">to_string</code>.</p>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">to_s</span><span class="p" data-group-id="5697434559-1">(</span><span class="mi">000001</span><span class="p" data-group-id="5697434559-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">to_s</span><span class="p" data-group-id="0052679699-1">(</span><span class="mi">000001</span><span class="p" data-group-id="0052679699-1">)</span><span class="w">
 </span><span class="s">&quot;1&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">to_s</span><span class="p" data-group-id="5697434559-2">(</span><span class="mi">123</span><span class="p" data-group-id="5697434559-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">to_s</span><span class="p" data-group-id="0052679699-2">(</span><span class="mi">123</span><span class="p" data-group-id="0052679699-2">)</span><span class="w">
 </span><span class="s">&quot;123&quot;</span></code></pre>
   </section>
 </section>
@@ -236,9 +236,9 @@ with dashes. Also downcases the entire string.</p>
   <section class="docstring">
 <p>Returns the data type for the provided data using guard functions.</p>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">Thesis.Utilities</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">typeof</span><span class="p" data-group-id="2610542553-1">(</span><span class="mi">000001</span><span class="p" data-group-id="2610542553-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">typeof</span><span class="p" data-group-id="3462439169-1">(</span><span class="mi">000001</span><span class="p" data-group-id="3462439169-1">)</span><span class="w">
 </span><span class="s">&quot;integer&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">typeof</span><span class="p" data-group-id="2610542553-2">(</span><span class="p" data-group-id="2610542553-3">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="2610542553-3">]</span><span class="p" data-group-id="2610542553-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">typeof</span><span class="p" data-group-id="3462439169-2">(</span><span class="p" data-group-id="3462439169-3">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3462439169-3">]</span><span class="p" data-group-id="3462439169-2">)</span><span class="w">
 </span><span class="s">&quot;list&quot;</span></code></pre>
   </section>
 </section>

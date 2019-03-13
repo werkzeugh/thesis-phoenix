@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.2">
-    <title>Thesis.Auth — thesis v0.3.2</title>
+    <title>Thesis.Auth — thesis v0.3.3</title>
     <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
       <link rel="canonical" href="https://hexdocs.pm/thesis/Thesis.Auth.html" />
     <script src="dist/sidebar_items-faefb02862.js"></script>
@@ -29,7 +29,7 @@
       <h1 class="sidebar-projectName">
 thesis      </h1>
       <h2 class="sidebar-projectVersion">
-        v0.3.2
+        v0.3.3
       </h2>
     </div>
   </a>
@@ -59,7 +59,7 @@ thesis      </h1>
 
 
       <h1>
-        <small class="visible-xs">thesis v0.3.2</small>
+        <small class="visible-xs">thesis v0.3.3</small>
 Thesis.Auth <small>behaviour</small>              </h1>
 
 
@@ -125,14 +125,14 @@ Callbacks          </h1>
 whether to load and display the Thesis editor and also whether to allow
 updates to Thesis.Page and Thesis.PageContent areas.</p>
 <p>Typical example:</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.ThesisAuth</span><span class="w"> </span><span class="k" data-group-id="7911432270-1">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.ThesisAuth</span><span class="w"> </span><span class="k" data-group-id="6689066158-1">do</span><span class="w">
   </span><span class="na">@behaviour</span><span class="w"> </span><span class="nc">Thesis.Auth</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">page_is_editable?</span><span class="p" data-group-id="7911432270-2">(</span><span class="n">conn</span><span class="p" data-group-id="7911432270-2">)</span><span class="w"> </span><span class="k" data-group-id="7911432270-3">do</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">page_is_editable?</span><span class="p" data-group-id="6689066158-2">(</span><span class="n">conn</span><span class="p" data-group-id="6689066158-2">)</span><span class="w"> </span><span class="k" data-group-id="6689066158-3">do</span><span class="w">
     </span><span class="n">conn</span><span class="w">
-    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">MyApp.AuthController</span><span class="o">.</span><span class="n">current_user_is_admin?</span><span class="p" data-group-id="7911432270-4">(</span><span class="n">conn</span><span class="p" data-group-id="7911432270-4">)</span><span class="w">
-  </span><span class="k" data-group-id="7911432270-3">end</span><span class="w">
-</span><span class="k" data-group-id="7911432270-1">end</span></code></pre>
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">MyApp.AuthController</span><span class="o">.</span><span class="n">current_user_is_admin?</span><span class="p" data-group-id="6689066158-4">(</span><span class="n">conn</span><span class="p" data-group-id="6689066158-4">)</span><span class="w">
+  </span><span class="k" data-group-id="6689066158-3">end</span><span class="w">
+</span><span class="k" data-group-id="6689066158-1">end</span></code></pre>
   </section>
 </section>
           </div>

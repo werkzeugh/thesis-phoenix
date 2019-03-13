@@ -107,7 +107,7 @@ _If you are having problems, view `README_INSTALL.md` for manual instructions._
 
 ```elixir
 def deps do
-  [{:thesis, "~> 0.3.2"}]
+  [{:thesis, "~> 0.3.3"}]
 end
 
 def application do
