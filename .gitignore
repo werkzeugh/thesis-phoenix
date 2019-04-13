@@ -11,3 +11,4 @@ yarn-error.log
 nohup.out
 yarn-error.log
 package-lock.json
+.vscode
