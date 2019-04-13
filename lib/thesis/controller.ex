@@ -48,7 +48,7 @@ defmodule Thesis.Controller do
         if Thesis.Page.redirected?(page) && !conn.assigns[:thesis_editable] do
           conn
           |> put_status(301)
-          |> redirect(to: page.redirect_url)
+          |> redirect(external: page.redirect_url)
         else
           conn
           |> put_status(200)
