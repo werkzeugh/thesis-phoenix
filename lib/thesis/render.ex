@@ -62,7 +62,7 @@ defmodule Thesis.Render do
   defp wrapper_attributes(%{content_type: content_type} = page_content, opts) do
     # TODO: Refactor into nicer pipeline
     # TODO: Update to String.trim when we only support Elixir >= 1.3 in the future.
-    empty_class = (String.strip("#{page_content.content}") == "") && "thesis-content-empty" || ""
+    empty_class = (String.trim("#{page_content.content}") == "") && "thesis-content-empty" || ""
     classes = "class=\"thesis-content thesis-content-#{content_type} #{empty_class} #{opts[:classes]}\""
     id = "id=\"#{opts[:id] || parameterize("thesis-content-" <> page_content.name)}\""
     data_content_type = "data-thesis-content-type=\"#{content_type}\""
@@ -71,7 +71,7 @@ defmodule Thesis.Render do
     data_global = (opts[:global]) && "data-thesis-content-global=\"true\"" || ""
     styles = "style=\"#{opts[:styles]}\"" # add the following when required: box-shadow: none; outline: none;
     [id, classes, data_content_type, data_content_id, data_global, data_content_meta, styles]
-    |> Enum.reject(fn s -> String.strip(s) == "" end)
+    |> Enum.reject(fn s -> String.trim(s) == "" end)
     |> Enum.join(" ")
   end
 
