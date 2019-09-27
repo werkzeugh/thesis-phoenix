@@ -5,7 +5,7 @@ defmodule Thesis.ApiController do
   import Thesis.Config
   alias Thesis.{Utilities, Backup}
 
-  plug :ensure_authorized! when not action in [:show_file]
+  plug :ensure_authorized! when not(action in [:show_file])
 
   def assets(conn, _params), do: conn
 
