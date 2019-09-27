@@ -11,7 +11,7 @@ defmodule Mix.Thesis.Utils do
 
   @doc false
   def status_msg(status, message),
-    do: IO.puts "#{IO.ANSI.green}* #{String.rjust(status, 10)}#{IO.ANSI.reset} #{message}"
+    do: IO.puts "#{IO.ANSI.green}* #{String.pad_leading(status, 10)}#{IO.ANSI.reset} #{message}"
 
   @doc false
   def debug(message), do: IO.puts "==> #{message}"
