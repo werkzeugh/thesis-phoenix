@@ -2,96 +2,46 @@
 
 <p align="center">
   <br/>
-  <a href="http://community.infinite.red/">
-    <img src="https://infiniteredcommunity.herokuapp.com/badge.svg">
-  </a>
   <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"/>
   <a href="https://semaphoreci.com/ir/thesis-phoenix"><img alt="Build Status" src="https://semaphoreci.com/api/v1/projects/0540dbb0-887a-45dd-9190-baa19b2ca9fb/816876/badge.svg"></a>
   <br/>
   <br/>
 </p>
 
-<table>
-  <tr><td><h4>What Is Thesis?</h4></td></tr>
-  <tr>
-    <td>
-      A CMS for Elixir/Phoenix that doesn't hijack your development workflow.
-      <br/>
-      <br/>
-      Thesis is a lightweight and flexible Elixir/Phoenix CMS for quickly and easily
-      adding content editing to any page on a Phoenix website, as well as creating new
-      dynamically routed pages. It's ideal for either adding limited editing support to
-      existing Phoenix websites or building dynamic websites.
-      <br/>
-      <br/>
-      Watch Jamon Holmgren give a 5-minute lightning talk about Thesis at ElixirConf 2017: https://www.youtube.com/watch?time_continue=2656&v=YqOwzXNkOyg
-    </td>
-  </tr>
+## What Is Thesis?
 
-  <tr><td><h4>Thesis Features</h4></td></tr>
-  <tr>
-    <td>
-      <ul>
-        <li>Elixir/Phoenix hex package, uses React.js for its user interface</li>
-        <li>Lightweight, bolt-on, doesn't hijack your development workflow</li>
-        <li>On-page rich text editing</li>
-        <li>On-page plain text editing</li>
-        <li>Raw HTML editing for Youtube embeds or other flexible uses</li>
-        <li>Image URL editing, both `img` tag and `div` with background image</li>
-        <li>Page meta title and description editing</li>
-        <li>Easily bring your own authentication system in one tiny function</li>
-        <li>Create new dynamic pages, delete dynamic pages</li>
-      </ul>
-    </td>
-  </tr>
+**A CMS for Elixir/Phoenix that doesn't hijack your development workflow.**
 
-  <tr><td><h4>What Thesis Isn't</h4></td></tr>
-  <tr>
-    <td>
-      You can't have it all. Thesis isn't the same as other -bloated- full-function
-      content management systems out there. This is a list of what it's not now and
-      not likely to be in the future.
-      <br/><br/>
-      <ul>
-        <li>Not a complete WordPress Replacement</li>
-        <li>Not a full featured CMS</li>
-        <li>Not a full featured WYSIWYG editor</li>
-        <li>Not an authentication or permission system</li>
-        <li>Not supported outside of a Phoenix app</li>
-      </ul>
-    </td>
-  </tr>
+Thesis is a lightweight and flexible Elixir/Phoenix CMS for quickly and easily
+adding content editing to any page on a Phoenix website, as well as creating new
+dynamically routed pages. It's ideal for either adding limited editing support to
+existing Phoenix websites or building dynamic websites.
 
-  <tr><td><h4>Changelog</h4></td></tr>
-  <tr>
-    <td>
-      <strong>0.3.1</strong><br/>
-      - Fixes issue #155 [pr #156](https://github.com/infinitered/thesis-phoenix/pull/156) Ambiguous call to function repo/0 on `mix ecto.migrate` - Phoenix 1.4
-      <br/><br/>
-      <strong>0.3.0</strong><br/>
-      - Removes the LZString compression for backups (page revisions) as per the conversation <a href="https://github.com/infinitered/thesis-phoenix/issues/129">here</a>. <br/>
-      - <em>Adds migration (run `mix thesis.install && mix ecto.migrate`)</em>. It is important to do this before 0.4.0 as the LZString dependency will be removed then.<br/>
-      - Adds <a href="https://github.com/infinitered/thesis-phoenix/issues/147">notifications</a>. This allows us to warn users of potential Thesis issues depending on page state, environment, Thesis version, etc. Notifications can also be set in the host app config to include custom logic. <br/>
-      - Bug fixes: <a href="https://github.com/infinitered/thesis-phoenix/issues/128">page revision exception</a>, <a href="https://github.com/infinitered/thesis-phoenix/issues/148">add new page button hover issue</a>.
-      <br/><br/>
-      <strong>0.2.0</strong><br/>
-      - Adds a backup (page revision history) feature. Every time a page is saved, a snapshot of the page and content is captured and can be restored later. <br/>
-      - <em>Adds migration (run `mix thesis.install && mix ecto.migrate`)</em>.
-      <br/><br/>
-      <strong>pre 0.2.0</strong><br/>
-      - Core Thesis functionality: content areas, global content areas, file uploads, import/export, dynamic pages, page templates.
-    </td>
-  </tr>
+Watch Jamon Holmgren give a 5-minute lightning talk about Thesis at ElixirConf 2017: https://www.youtube.com/watch?time_continue=2656&v=YqOwzXNkOyg
 
-  <tr><td><h4>Caveats</h4></td></tr>
-  <tr>
-    <td>
-      Thesis is currently considered <em>Beta-quality</em>, but is in production on several
-      websites, including <a href="https://infinite.red">Infinite Red</a>. The API is
-      largely stable and we are committed to providing a clear upgrade path and documentation.
-    </td>
-  </tr>
-</table>
+## Thesis Features
+
+1. Elixir/Phoenix hex package, uses React.js for its user interface
+2. Lightweight, bolt-on, doesn't hijack your development workflow
+3. On-page rich text editing
+4. On-page plain text editing
+5. Raw HTML editing for Youtube embeds or other flexible uses
+6. Image URL editing, both `img` tag and `div` with background image
+7. Page meta title and description editing
+8. Easily bring your own authentication system in one tiny function
+9. Create new dynamic pages, delete dynamic pages
+
+## What Thesis Isn't
+
+Thesis isn't the same as other -bloated- full-function
+content management systems out there. This is a list of what it's not now and
+not likely to be in the future.
+
+* Not a complete WordPress Replacement
+* Not a full featured CMS
+* Not a full featured WYSIWYG editor
+* Not an authentication or permission system
+* Not supported outside of a Phoenix app
 
 ![screen capture on 2016-04-20 at 15-11-10 copy](https://cloud.githubusercontent.com/assets/1775841/24872094/0118ef42-1dd1-11e7-975a-26de44c9d9dc.gif)
 
