@@ -57,10 +57,6 @@ _If you are having problems, view `README_INSTALL.md` for manual instructions._
 def deps do
   [{:thesis, "~> 0.3.4"}]
 end
-
-def application do
-  [applications: [:thesis]]
-end
 ```
 
 ##### 2. Run `mix thesis.install`
@@ -87,7 +83,7 @@ $ mix ecto.migrate
 
 # ![](http://placehold.it/890x200/2b1e34/ffffff?text=-%20%20%20%20%20%20%20%20%20%20Demo+App%20%20%20%20%20%20%20%20%20%20-)
 
-Check out the example app in `apps/example` to see how Thesis can be implemented.
+Check out the example apps in `examples/` to see how Thesis can be implemented.
 We'll keep this up to date with examples of the latest features as we develop Thesis.
 <br/>
 
