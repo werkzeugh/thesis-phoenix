@@ -5,18 +5,19 @@ defmodule Thesis.ApiController do
   import Thesis.Config
   alias Thesis.{Utilities, Backup}
 
-  plug :ensure_authorized! when not(action in [:show_file])
+  plug(:ensure_authorized! when not (action in [:show_file]))
 
   def assets(conn, _params), do: conn
 
   def update(conn, %{"contents" => contents, "page" => page}) do
+    page = page |> update_in(["slug"], &Thesis.Utilities.normalize_path/1)
     {:ok, _page} = store().update(page, contents)
-    json conn, %{}
+    json(conn, %{})
   end
 
   def delete(conn, %{"path" => path}) do
     {:ok, _page} = store().delete(%{"slug" => path})
-    json conn, %{}
+    json(conn, %{})
   end
 
   def backups_for_page(conn, %{"page_slug" => page_slug}) do
@@ -30,32 +31,39 @@ defmodule Thesis.ApiController do
           page_revision: b.page_revision,
           inserted_at: b.inserted_at,
           pretty_date: b.pretty_date
-        } end
-      )
-    json conn, backups
+        }
+      end)
+
+    json(conn, backups)
   end
 
   def restore(conn, %{"backup_id" => backup_id}) do
     backup = store().restore(String.to_integer(backup_id))
-    json conn, %{revision: backup.page_json}
+    json(conn, %{revision: backup.page_json})
   end
 
-  def import_file(conn, %{"image_url" => ""}), do: json conn, %{path: ""}
+  def import_file(conn, %{"image_url" => ""}), do: json(conn, %{path: ""})
+
   def import_file(conn, %{"image_url" => image_url}) do
     image = HTTPoison.get!(image_url)
+
     file = %{
       data: image.body,
       filename: "imported-" <> Utilities.parameterize(image_url),
-      content_type: (image.headers |> Enum.into(%{}) |> Map.new(fn {k, v} -> {String.downcase(k), v} end))["content-type"]
+      content_type:
+        (image.headers
+         |> Enum.into(%{})
+         |> Map.new(fn {k, v} -> {String.downcase(k), v} end))["content-type"]
     }
 
     do_upload_file(conn, file)
   end
-  def import_file(conn, _), do: json conn, %{path: ""}
 
-  def upload_file(conn, %{"file" => ""}), do: json conn, %{path: ""}
+  def import_file(conn, _), do: json(conn, %{path: ""})
+
+  def upload_file(conn, %{"file" => ""}), do: json(conn, %{path: ""})
   def upload_file(conn, %{"file" => file}), do: do_upload_file(conn, file)
-  def upload_file(conn, _), do: json conn, %{path: ""}
+  def upload_file(conn, _), do: json(conn, %{path: ""})
 
   def show_file(conn, %{"slug" => slug}) do
     file = store().file(slug)
@@ -64,8 +72,8 @@ defmodule Thesis.ApiController do
 
   defp do_upload_file(conn, file) do
     case uploader().upload(file) do
-      {:ok, path} -> json conn, %{path: path}
-      {:error, _} -> json conn, %{path: ""}
+      {:ok, path} -> json(conn, %{path: path})
+      {:error, _} -> json(conn, %{path: ""})
     end
   end
 
@@ -90,6 +98,4 @@ defmodule Thesis.ApiController do
     |> put_status(:unauthorized)
     |> halt
   end
-
-
 end
