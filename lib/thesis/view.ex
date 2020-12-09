@@ -44,14 +44,15 @@ defmodule Thesis.View do
         <p>Default description</p>
       <% end %>
   """
-  @spec content(Plug.Conn.t, String.t, String.t, list) :: String.t | {:safe, String.t}
+  @spec content(Plug.Conn.t(), String.t(), String.t(), list) :: String.t() | {:safe, String.t()}
   def content(conn, name, type, opts \\ [do: ""]) do
     page = current_page(conn)
     render_content(conn, page.id, name, type, opts)
   end
 
-  @spec content(Plug.Conn.t, String.t, String.t, list, list) :: String.t | {:safe, String.t}
-  def content(conn, name, type, opts, [do: block]) do
+  @spec content(Plug.Conn.t(), String.t(), String.t(), list, list) ::
+          String.t() | {:safe, String.t()}
+  def content(conn, name, type, opts, do: block) do
     page = current_page(conn)
     render_content(conn, page.id, name, type, Keyword.put(opts, :do, block))
   end
@@ -71,23 +72,28 @@ defmodule Thesis.View do
         <p>Default description</p>
       <% end %>
   """
-  @spec global_content(Plug.Conn.t, String.t, String.t, list) :: String.t | {:safe, String.t}
+  @spec global_content(Plug.Conn.t(), String.t(), String.t(), list) ::
+          String.t() | {:safe, String.t()}
   def global_content(conn, name, type, opts \\ [do: ""]) do
     opts = Keyword.put(opts, :global, true)
     render_content(conn, nil, name, type, opts)
   end
 
-  @spec global_content(Plug.Conn.t, String.t, String.t, list, list) :: String.t | {:safe, String.t}
-  def global_content(conn, name, type, opts, [do: block]) do
+  @spec global_content(Plug.Conn.t(), String.t(), String.t(), list, list) ::
+          String.t() | {:safe, String.t()}
+  def global_content(conn, name, type, opts, do: block) do
     opts = Keyword.put(opts, :global, true)
     render_content(conn, nil, name, type, Keyword.put(opts, :do, block))
   end
 
   defp render_content(conn, page_id, name, type, opts) do
     all_content = conn.assigns[:thesis_content]
+
     if all_content do
-      content = PageContent.find(all_content, page_id, name) ||
-        make_content(page_id, name, type, stringify(opts[:do]), Keyword.delete(opts, :do))
+      content =
+        PageContent.find(all_content, page_id, name) ||
+          make_content(page_id, name, type, stringify(opts[:do]), Keyword.delete(opts, :do))
+
       Render.render_editable(content, opts)
     else
       raise controller_missing_text()
@@ -100,7 +106,7 @@ defmodule Thesis.View do
       iex> Thesis.View.current_page(%Plug.Conn{request_path: "/test"})
       %Thesis.Page{slug: "/test"}
   """
-  @spec current_page(Plug.Conn.t) :: Thesis.Page.t
+  @spec current_page(Plug.Conn.t()) :: Thesis.Page.t()
   def current_page(conn) do
     conn.assigns[:thesis_page] || make_page(conn.request_path)
   end
@@ -124,26 +130,31 @@ defmodule Thesis.View do
       iex> Thesis.View.thesis_editor(%Plug.Conn{assigns: %{thesis_editable: false}})
       {:safe, ""}
   """
-  @spec thesis_editor(Plug.Conn.t) :: {:safe, String.t}
+  @spec thesis_editor(Plug.Conn.t()) :: {:safe, String.t()}
   def thesis_editor(conn) do
     if editable?(conn) do
       page = conn.assigns[:thesis_page]
       redirect_url = page && page.redirect_url
       template = page && page.template
       templates = Enum.join(dynamic_templates(), ",")
-      notifications = conn |> Notifications.all() |> Poison.encode!
-      editor = content_tag(:div, "", id: "thesis-container",
-        data_html_editor: html_editor(),
-        data_ospry_public_key: ospry_public_key(),
-        data_file_uploader: uploader(),
-        data_redirect_url: redirect_url,
-        data_template: template,
-        data_templates: templates,
-        data_notifications: notifications,
-        data_dynamic_page: conn.assigns[:thesis_dynamic_page])
+      notifications = conn |> Notifications.all() |> Poison.encode!()
+
+      editor =
+        content_tag(:div, "",
+          id: "thesis-container",
+          data_html_editor: html_editor(),
+          data_ospry_public_key: ospry_public_key(),
+          data_file_uploader: uploader(),
+          data_redirect_url: redirect_url,
+          data_template: template,
+          data_templates: templates,
+          data_notifications: notifications,
+          data_dynamic_page: conn.assigns[:thesis_dynamic_page]
+        )
+
       safe_concat([thesis_style(), editor, thesis_js()])
     else
-      raw ""
+      raw("")
     end
   end
 
@@ -206,13 +217,13 @@ defmodule Thesis.View do
   end
 
   defp thesis_style do
-    raw """
+    raw("""
     <link href='/thesis/thesis.css' rel='stylesheet' />
-    """
+    """)
   end
 
   defp thesis_js do
-    raw """
+    raw("""
     <script>
       ;(function () {
         var loadThesis = function (callback) {
@@ -234,7 +245,7 @@ defmodule Thesis.View do
         })
       })()
     </script>
-    """
+    """)
   end
 
   defp editable?(conn) do
@@ -244,7 +255,7 @@ defmodule Thesis.View do
   defp safe_concat(list) do
     list
     |> Enum.map(&stringify/1)
-    |> Enum.join
+    |> Enum.join()
     |> raw
   end
 

@@ -36,7 +36,9 @@ defmodule Thesis.Render do
   def render_editable(%{content_type: "image"} = page_content, opts) do
     raw("""
       <div #{wrapper_attributes(page_content, opts)}>
-        <img src="#{escape_entities(page_content.content)}" #{image_attributes(page_content)}>
+        <img src="#{escape_entities(page_content.content)}" #{
+      image_attributes(page_content, opts)
+    }>
       </div>
     """)
   end
@@ -51,7 +53,12 @@ defmodule Thesis.Render do
 
   def render_editable(%{content_type: "background_image"} = page_content, opts) do
     raw("""
-      <div #{wrapper_attributes(page_content, Keyword.put(opts, :styles, background_image_string(page_content.content)))}></div>
+      <div #{
+      wrapper_attributes(
+        page_content,
+        Keyword.put(opts, :styles, background_image_string(page_content.content))
+      )
+    }></div>
     """)
   end
 
@@ -62,23 +69,34 @@ defmodule Thesis.Render do
   defp wrapper_attributes(%{content_type: content_type} = page_content, opts) do
     # TODO: Refactor into nicer pipeline
     # TODO: Update to String.trim when we only support Elixir >= 1.3 in the future.
-    empty_class = (String.trim("#{page_content.content}") == "") && "thesis-content-empty" || ""
-    classes = "class=\"thesis-content thesis-content-#{content_type} #{empty_class} #{opts[:classes]}\""
+    empty_class = (String.trim("#{page_content.content}") == "" && "thesis-content-empty") || ""
+
+    classes =
+      "class=\"thesis-content thesis-content-#{content_type} #{empty_class} #{opts[:classes]}\""
+
     id = "id=\"#{opts[:id] || parameterize("thesis-content-" <> page_content.name)}\""
     data_content_type = "data-thesis-content-type=\"#{content_type}\""
     data_content_id = "data-thesis-content-id=\"#{escape_entities(page_content.name)}\""
     data_content_meta = "data-thesis-content-meta=\"#{escape_entities(page_content.meta)}\""
-    data_global = (opts[:global]) && "data-thesis-content-global=\"true\"" || ""
-    styles = "style=\"#{opts[:styles]}\"" # add the following when required: box-shadow: none; outline: none;
-    [id, classes, data_content_type, data_content_id, data_global, data_content_meta, styles]
+    data_global = (opts[:global] && "data-thesis-content-global=\"true\"") || ""
+
+    # add the following when required: box-shadow: none; outline: none;
+    styles = "style=\"#{opts[:styles]}\""
+
+    if opts[:readonly] do
+      [styles]
+    else
+      [id, classes, data_content_type, data_content_id, data_global, data_content_meta, styles]
+    end
     |> Enum.reject(fn s -> String.trim(s) == "" end)
     |> Enum.join(" ")
   end
 
-  defp image_attributes(page_content) do
+  defp image_attributes(page_content, opts) do
     page_content
-    |> PageContent.meta_attributes
-    |> Enum.map(fn ({k, v}) -> "#{k}=\"#{escape_entities(v)}\"" end)
+    |> PageContent.meta_attributes()
+    |> Map.put(:class, opts[:imgclasses])
+    |> Enum.map(fn {k, v} -> "#{k}=\"#{escape_entities(v)}\"" end)
     |> Enum.join(" ")
   end
 
@@ -91,5 +109,4 @@ defmodule Thesis.Render do
     |> html_escape
     |> safe_to_string
   end
-
 end
